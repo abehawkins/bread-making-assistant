@@ -1,0 +1,83 @@
+{
+  "id": "biscuits",
+  "name": "Biscuits",
+  "category": "Sweet",
+  "emoji": "🧈",
+  "yield": "About 8 biscuits",
+  "totalTime": "About 45 minutes",
+  "difficulty": "Beginner",
+  "summary": "Flaky, tender sourdough-discard biscuits with buttery layers.",
+  "ingredients": [
+    {
+      "item": "120g active sourdough starter"
+    },
+    {
+      "item": "250g all-purpose flour"
+    },
+    {
+      "item": "10g baking powder (≈2 tsp)"
+    },
+    {
+      "item": "5g sugar (≈1 tsp)"
+    },
+    {
+      "item": "5g salt (≈1 tsp)"
+    },
+    {
+      "item": "115g cold unsalted butter (cubed)"
+    },
+    {
+      "item": "120g cold milk or buttermilk"
+    }
+  ],
+  "tips": [
+    "For even flakier results, chill the shaped biscuits in the refrigerator for 15–20 minutes while you preheat the oven.",
+    "Use buttermilk instead of milk for extra flavor and tenderness.",
+    "Don't twist the cutter when shaping — it can seal the edges and prevent full rise."
+  ],
+  "steps": [
+    {
+      "title": "Prepare Dry Ingredients",
+      "instruction": "In a large mixing bowl, whisk together the flour, baking powder, sugar, and salt."
+    },
+    {
+      "title": "Cut in the Butter",
+      "instruction": "Add the cold cubed butter and use a pastry cutter or your fingertips to blend until the mixture resembles coarse crumbs."
+    },
+    {
+      "title": "Add Sourdough and Milk",
+      "instruction": "Add the sourdough starter and milk to the bowl. Stir just until a rough dough forms. Do not overmix."
+    },
+    {
+      "title": "Fold for Layers",
+      "instruction": "Turn the dough onto a floured surface. Gently pat into a rectangle, then fold in thirds (like a letter). Repeat this folding 2–3 times to build flaky layers."
+    },
+    {
+      "title": "Shape and Cut",
+      "instruction": "Pat the dough to about 1-inch thickness and cut with a biscuit cutter or floured glass. Gather scraps and re-roll as needed.",
+      "tip": "Don't twist the cutter — it seals the edges and limits rise."
+    },
+    {
+      "title": "Chill (Optional)",
+      "instruction": "Chill the shaped biscuits in the fridge for 15–20 minutes while you preheat the oven for even flakier results.",
+      "timer": {
+        "seconds": 900,
+        "label": "Chill",
+        "rangeText": "15–20 minutes"
+      }
+    },
+    {
+      "title": "Bake",
+      "instruction": "Preheat oven to 425°F (220°C). Place biscuits on a parchment-lined baking sheet and bake for 15–18 minutes, or until golden brown on top.",
+      "timer": {
+        "seconds": 900,
+        "label": "Bake",
+        "rangeText": "15–18 minutes"
+      }
+    },
+    {
+      "title": "Cool and Serve",
+      "instruction": "Let the biscuits cool slightly before serving. Enjoy with butter, honey, or jam!"
+    }
+  ]
+}

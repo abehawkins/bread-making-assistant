@@ -1,0 +1,127 @@
+{
+  "id": "sweet-rolls",
+  "name": "Sweet Rolls",
+  "category": "Sweet",
+  "emoji": "🍯",
+  "yield": "10–12 rolls",
+  "totalTime": "About 12 hours (incl. proof)",
+  "difficulty": "Intermediate",
+  "summary": "Soft, fluffy cinnamon sweet rolls topped with cream cheese icing.",
+  "ingredients": [
+    {
+      "group": "Dough",
+      "item": "100g active sourdough starter"
+    },
+    {
+      "group": "Dough",
+      "item": "240g lukewarm milk (or plant-based alternative)"
+    },
+    {
+      "group": "Dough",
+      "item": "60g soft butter"
+    },
+    {
+      "group": "Dough",
+      "item": "50g sugar"
+    },
+    {
+      "group": "Dough",
+      "item": "1 egg"
+    },
+    {
+      "group": "Dough",
+      "item": "450g all-purpose flour"
+    },
+    {
+      "group": "Dough",
+      "item": "7g salt"
+    },
+    {
+      "group": "Filling",
+      "item": "75g soft butter"
+    },
+    {
+      "group": "Filling",
+      "item": "100g brown sugar"
+    },
+    {
+      "group": "Filling",
+      "item": "2 tablespoons ground cinnamon"
+    },
+    {
+      "group": "Icing (Optional)",
+      "item": "60g cream cheese"
+    },
+    {
+      "group": "Icing (Optional)",
+      "item": "30g soft butter"
+    },
+    {
+      "group": "Icing (Optional)",
+      "item": "100g powdered sugar"
+    },
+    {
+      "group": "Icing (Optional)",
+      "item": "1–2 tablespoons milk or cream"
+    },
+    {
+      "group": "Icing (Optional)",
+      "item": "½ teaspoon vanilla extract"
+    }
+  ],
+  "tips": [
+    "Make-ahead version: shape the rolls and refrigerate overnight before the second rise. Let come to room temp for 1–2 hours before baking.",
+    "The longer fermentation adds tangy flavor — perfectly balanced by the sweet filling and icing.",
+    "You can freeze the shaped, unbaked rolls — just thaw, rise, and bake later."
+  ],
+  "steps": [
+    {
+      "title": "Mix the Dough",
+      "instruction": "In a large bowl, mix together the starter, milk, butter, sugar, and egg until well blended. Add flour and salt, mixing until a soft dough forms."
+    },
+    {
+      "title": "Knead",
+      "instruction": "Knead the dough for 8–10 minutes by hand or mixer until smooth and elastic. Add a touch more flour if sticky, but keep the dough soft."
+    },
+    {
+      "title": "Bulk Fermentation",
+      "instruction": "Cover and let rise at room temperature for 6–8 hours (or overnight) until doubled in size.",
+      "timer": {
+        "seconds": 21600,
+        "label": "Bulk fermentation",
+        "rangeText": "6–8 hours or overnight"
+      }
+    },
+    {
+      "title": "Prepare Filling",
+      "instruction": "Mix the soft butter, brown sugar, and cinnamon into a spreadable paste."
+    },
+    {
+      "title": "Shape the Rolls",
+      "instruction": "Turn dough onto a lightly floured surface. Roll into a rectangle (about 9 × 13 inches). Spread the filling evenly, then roll tightly from the long edge and slice into 10–12 rolls."
+    },
+    {
+      "title": "Second Rise",
+      "instruction": "Place rolls into a greased or parchment-lined baking pan. Cover and let rise for 2–4 hours, or until puffy.",
+      "timer": {
+        "seconds": 7200,
+        "label": "Second rise",
+        "rangeText": "2–4 hours"
+      }
+    },
+    {
+      "title": "Bake",
+      "instruction": "Preheat oven to 375°F (190°C). Bake the rolls for 20–25 minutes until golden brown.",
+      "timer": {
+        "seconds": 1200,
+        "label": "Bake",
+        "rangeText": "20–25 minutes"
+      }
+    },
+    {
+      "title": "Icing (Optional)",
+      "instruction": "While the rolls are baking, beat the cream cheese, butter, sugar, vanilla, and milk until smooth. Spread over the warm rolls.",
+      "tip": "Spread icing while rolls are still warm for that gooey finish."
+    }
+  ]
+}

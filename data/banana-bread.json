@@ -1,0 +1,98 @@
+{
+  "id": "banana-bread",
+  "name": "Banana Bread",
+  "category": "Sweet",
+  "emoji": "🍌",
+  "yield": "1 loaf",
+  "totalTime": "About 1.5 hours",
+  "difficulty": "Beginner",
+  "summary": "A quick (no-proof) sourdough-discard banana bread, moist and easy.",
+  "ingredients": [
+    {
+      "item": "150g sourdough discard"
+    },
+    {
+      "item": "250g ripe banana (about 2 medium bananas, mashed)"
+    },
+    {
+      "item": "100g granulated sugar"
+    },
+    {
+      "item": "50g brown sugar"
+    },
+    {
+      "item": "2 large eggs"
+    },
+    {
+      "item": "75g neutral oil (e.g. vegetable or light olive oil)"
+    },
+    {
+      "item": "1 teaspoon vanilla extract"
+    },
+    {
+      "item": "190g all-purpose flour"
+    },
+    {
+      "item": "1 teaspoon baking soda"
+    },
+    {
+      "item": "½ teaspoon baking powder"
+    },
+    {
+      "item": "½ teaspoon salt"
+    },
+    {
+      "item": "1 teaspoon ground cinnamon (optional)"
+    },
+    {
+      "item": "50–80g chopped walnuts or chocolate chips (optional)"
+    }
+  ],
+  "tips": [
+    "Use bananas with lots of brown spots for the best flavor and sweetness.",
+    "Want extra moisture? Replace 25g of oil with sour cream or yogurt.",
+    "Banana bread freezes well — wrap tightly and store up to 2 months."
+  ],
+  "steps": [
+    {
+      "title": "Preheat Oven",
+      "instruction": "Preheat your oven to 350°F (175°C). Grease or line a 9×5-inch loaf pan with parchment paper.",
+      "timer": {
+        "seconds": 600,
+        "label": "Preheat",
+        "rangeText": "while you mix"
+      }
+    },
+    {
+      "title": "Mix Wet Ingredients",
+      "instruction": "In a large mixing bowl, whisk together mashed bananas, sourdough discard, sugar, brown sugar, eggs, oil, and vanilla until smooth."
+    },
+    {
+      "title": "Add Dry Ingredients",
+      "instruction": "Add the flour, baking soda, baking powder, salt, and cinnamon (if using). Stir the mixture to the wet ingredients until just combined — don't overmix."
+    },
+    {
+      "title": "Add Optional Mix-ins",
+      "instruction": "Fold in chopped nuts or chocolate chips if using."
+    },
+    {
+      "title": "Bake",
+      "instruction": "Pour the batter into the prepared pan and smooth the top. Bake for 55–65 minutes, or until a toothpick inserted in the center comes out clean or with just a few moist crumbs.",
+      "timer": {
+        "seconds": 3300,
+        "label": "Bake",
+        "rangeText": "55–65 minutes"
+      }
+    },
+    {
+      "title": "Cool",
+      "instruction": "Let cool in the pan for 10 minutes, then transfer to a wire rack to cool completely before slicing.",
+      "timer": {
+        "seconds": 600,
+        "label": "Cool in pan",
+        "rangeText": "10 minutes"
+      },
+      "tip": "For neat slices, cool completely. To bake as muffins instead, use a 12-cup muffin tin and bake 20–24 minutes."
+    }
+  ]
+}

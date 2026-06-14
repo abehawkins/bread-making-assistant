@@ -1,0 +1,76 @@
+{
+  "id": "pancakes",
+  "name": "Pancakes",
+  "category": "Breakfast",
+  "emoji": "🥞",
+  "yield": "About 8 pancakes",
+  "totalTime": "About 30 minutes",
+  "difficulty": "Beginner",
+  "summary": "Light, fluffy sourdough pancakes — great for using up starter.",
+  "ingredients": [
+    {
+      "item": "200g active sourdough starter"
+    },
+    {
+      "item": "150g all-purpose flour"
+    },
+    {
+      "item": "250g milk (or plant-based milk)"
+    },
+    {
+      "item": "1 egg"
+    },
+    {
+      "item": "25g sugar (≈2 tbsp)"
+    },
+    {
+      "item": "4g salt (≈¾ tsp)"
+    },
+    {
+      "item": "5g baking powder (≈1 tsp)"
+    },
+    {
+      "item": "28g melted butter or neutral oil (≈2 tbsp)"
+    },
+    {
+      "item": "1 tsp vanilla extract (optional)"
+    }
+  ],
+  "tips": [
+    "Want extra fluff? Add ½ tsp baking soda just before cooking.",
+    "For more tang, let the batter rest in the fridge overnight before cooking.",
+    "Add blueberries, chocolate chips, or chopped bananas to the batter for variation."
+  ],
+  "steps": [
+    {
+      "title": "Mix Wet Ingredients",
+      "instruction": "In a large bowl, whisk together the starter, milk, egg, melted butter, and vanilla extract (if using)."
+    },
+    {
+      "title": "Add Dry Ingredients",
+      "instruction": "Add the flour, sugar, salt, and baking powder to the wet mixture. Stir just until combined — small lumps are okay. Do not overmix."
+    },
+    {
+      "title": "Rest (Optional but Recommended)",
+      "instruction": "Let the batter rest for 10–15 minutes to improve texture and rise. This also allows the flour to hydrate fully.",
+      "timer": {
+        "seconds": 600,
+        "label": "Rest batter",
+        "rangeText": "10–15 minutes"
+      }
+    },
+    {
+      "title": "Cook the Pancakes",
+      "instruction": "Heat a lightly greased nonstick skillet or griddle over medium heat. Pour about ¼ cup of batter per pancake. Cook until bubbles appear on the surface and the edges begin to set (about 2–3 minutes), then flip and cook another 1–2 minutes.",
+      "timer": {
+        "seconds": 150,
+        "label": "First side",
+        "rangeText": "2–3 minutes"
+      }
+    },
+    {
+      "title": "Serve",
+      "instruction": "Stack warm pancakes and serve with butter, maple syrup, fruit, or yogurt."
+    }
+  ]
+}

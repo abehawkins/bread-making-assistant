@@ -1,0 +1,98 @@
+{
+  "id": "chocolate-cake",
+  "name": "Chocolate Cake",
+  "category": "Sweet",
+  "emoji": "🍰",
+  "yield": "1 cake (9×13 or two 8-inch rounds)",
+  "totalTime": "About 1 hour",
+  "difficulty": "Beginner",
+  "summary": "A rich, moist sourdough-discard chocolate cake.",
+  "ingredients": [
+    {
+      "item": "200g sourdough discard"
+    },
+    {
+      "item": "240g all-purpose flour"
+    },
+    {
+      "item": "60g unsweetened cocoa powder"
+    },
+    {
+      "item": "1½ teaspoons baking soda"
+    },
+    {
+      "item": "½ teaspoon salt"
+    },
+    {
+      "item": "200g granulated sugar"
+    },
+    {
+      "item": "100g brown sugar"
+    },
+    {
+      "item": "2 large eggs"
+    },
+    {
+      "item": "240ml milk (or any milk)"
+    },
+    {
+      "item": "120ml neutral oil (e.g. canola or vegetable oil)"
+    },
+    {
+      "item": "1 teaspoon vanilla extract"
+    },
+    {
+      "item": "240ml hot water or hot coffee (coffee deepens chocolate flavor but is optional)"
+    }
+  ],
+  "tips": [
+    "Make sure your discard has no signs of spoilage (no pink or mold).",
+    "This cake is very forgiving — discard that's a few days old in the fridge works fine.",
+    "You can store it covered for up to 3 days, or freeze slices for later."
+  ],
+  "steps": [
+    {
+      "title": "Preheat Oven",
+      "instruction": "Preheat your oven to 350°F (175°C). Grease and flour a 9×13 inch (23×33 cm) baking pan or two 8-inch round pans.",
+      "timer": {
+        "seconds": 600,
+        "label": "Preheat",
+        "rangeText": "while you mix"
+      }
+    },
+    {
+      "title": "Mix Dry Ingredients",
+      "instruction": "In a large bowl, sift together flour, cocoa powder, baking soda, and salt. Set aside."
+    },
+    {
+      "title": "Combine Wet Ingredients",
+      "instruction": "In another bowl, whisk together eggs, sugar, brown sugar, milk, oil, and vanilla until well blended. Stir in the sourdough discard and fully incorporate."
+    },
+    {
+      "title": "Combine Wet and Dry",
+      "instruction": "Gradually mix the dry ingredients into the wet until no flour remains. Slowly add the hot water (or hot coffee), mixing until smooth. The batter will be thin — this is normal."
+    },
+    {
+      "title": "Bake",
+      "instruction": "Pour the batter into the prepared pan(s). Bake for 30–35 minutes (round pans) or until a toothpick inserted in the center comes out clean.",
+      "timer": {
+        "seconds": 1800,
+        "label": "Bake",
+        "rangeText": "30–35 minutes"
+      }
+    },
+    {
+      "title": "Cool",
+      "instruction": "Allow to cool in the pan for 10–15 minutes, then transfer to a wire rack to cool completely.",
+      "timer": {
+        "seconds": 600,
+        "label": "Cool in pan",
+        "rangeText": "10–15 minutes"
+      }
+    },
+    {
+      "title": "Serve",
+      "instruction": "Enjoy as-is or frost with your favorite chocolate frosting once fully cooled."
+    }
+  ]
+}

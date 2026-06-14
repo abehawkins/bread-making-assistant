@@ -1,0 +1,80 @@
+{
+  "id": "waffles",
+  "name": "Waffles",
+  "category": "Breakfast",
+  "emoji": "🧇",
+  "yield": "About 4–6 waffles",
+  "totalTime": "About 30 minutes",
+  "difficulty": "Beginner",
+  "summary": "Crispy-outside, fluffy-inside sourdough waffles.",
+  "ingredients": [
+    {
+      "item": "200g active sourdough starter"
+    },
+    {
+      "item": "250g milk (or buttermilk / plant-based milk)"
+    },
+    {
+      "item": "100g all-purpose flour"
+    },
+    {
+      "item": "30g sugar (about 2 tbsp)"
+    },
+    {
+      "item": "5g salt (about ¾ tsp)"
+    },
+    {
+      "item": "1 large egg"
+    },
+    {
+      "item": "50g melted butter or neutral oil (about ¼ cup)"
+    },
+    {
+      "item": "5g baking powder (1 tsp)"
+    },
+    {
+      "item": "1 tsp vanilla extract (optional)"
+    }
+  ],
+  "tips": [
+    "Overnight version: for more sour flavor, mix all ingredients except egg, baking powder, and butter, then refrigerate. In the morning, stir in the remaining ingredients just before cooking.",
+    "Crispier waffles: let the cooked waffles rest for a minute on a wire rack after cooking to maintain crispness.",
+    "Add-ins: feel free to fold in chopped blueberries or mini chocolate chips for extra flair."
+  ],
+  "steps": [
+    {
+      "title": "Mix Wet Ingredients",
+      "instruction": "In a mixing bowl, whisk together the sourdough starter, milk, egg, melted butter, and vanilla extract."
+    },
+    {
+      "title": "Add Dry Ingredients",
+      "instruction": "Stir in the flour, sugar, salt, and baking powder until just combined. Do not overmix."
+    },
+    {
+      "title": "Rest the Batter (Optional)",
+      "instruction": "Let the batter rest for 10–20 minutes at room temperature to thicken and crisp — fermentation enhances flavor.",
+      "timer": {
+        "seconds": 600,
+        "label": "Rest batter",
+        "rangeText": "10–20 minutes"
+      }
+    },
+    {
+      "title": "Preheat the Waffle Iron",
+      "instruction": "Preheat your waffle iron and heat it according to the manufacturer's instructions. Lightly grease if needed."
+    },
+    {
+      "title": "Cook the Waffles",
+      "instruction": "Pour batter into the waffle iron and cook until golden brown and crisp, usually about 4–5 minutes depending on your iron.",
+      "timer": {
+        "seconds": 270,
+        "label": "Cook",
+        "rangeText": "about 4–5 minutes"
+      }
+    },
+    {
+      "title": "Serve",
+      "instruction": "Serve immediately with butter, maple syrup, fruit, yogurt, or whipped cream."
+    }
+  ]
+}

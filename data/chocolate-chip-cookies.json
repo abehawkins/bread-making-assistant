@@ -1,0 +1,100 @@
+{
+  "id": "chocolate-chip-cookies",
+  "name": "Chocolate Chip Cookies",
+  "category": "Sweet",
+  "emoji": "🍪",
+  "yield": "About 18–24 cookies",
+  "totalTime": "About 12 hours (incl. chill)",
+  "difficulty": "Beginner",
+  "summary": "Chewy sourdough-discard chocolate chip cookies with deep flavor.",
+  "ingredients": [
+    {
+      "item": "226g soft unsalted butter"
+    },
+    {
+      "item": "200g brown sugar"
+    },
+    {
+      "item": "80g white sugar"
+    },
+    {
+      "item": "1 large egg"
+    },
+    {
+      "item": "6g vanilla extract"
+    },
+    {
+      "item": "150g sourdough discard (unfed, room temperature)"
+    },
+    {
+      "item": "375g all-purpose flour"
+    },
+    {
+      "item": "5g baking soda"
+    },
+    {
+      "item": "5g salt"
+    },
+    {
+      "item": "250g chocolate chips (semi-sweet or dark, your choice)"
+    }
+  ],
+  "tips": [
+    "Flavor improves with chill time — overnight rest allows the flour and discard to develop richer, deeper notes.",
+    "Don't skip the chill — it prevents spreading and creates chewy centers.",
+    "For crispier edges and chewy centers, pull the cookies when just set in the middle.",
+    "You can freeze the dough balls raw and bake directly from frozen (add 1–2 minutes to bake time).",
+    "Sprinkle flaky sea salt on top before baking for a gourmet touch."
+  ],
+  "steps": [
+    {
+      "title": "Cream the Wet Ingredients",
+      "instruction": "In a large bowl using a hand or stand mixer on medium-high speed, cream together the softened butter, brown sugar, and white sugar until light and fluffy (at least 2–3 minutes). Add the egg, vanilla extract, and sourdough discard. Beat again on medium until well incorporated and smooth."
+    },
+    {
+      "title": "Add Dry Ingredients",
+      "instruction": "Add the flour, baking soda, and salt. Mix on low speed until just combined — don't overmix."
+    },
+    {
+      "title": "Fold in Chocolate Chips",
+      "instruction": "Stir in chocolate chips by hand or on low speed until evenly distributed."
+    },
+    {
+      "title": "Chill the Dough",
+      "instruction": "Cover and refrigerate the dough for at least 4 hours (up to 72 hours) for best flavor and texture. Chill overnight for best results.",
+      "timer": {
+        "seconds": 14400,
+        "label": "Chill dough",
+        "rangeText": "at least 4 hours (up to 72 hours)"
+      },
+      "tip": "Don't skip the chill — it prevents spreading and creates chewy centers."
+    },
+    {
+      "title": "Preheat & Portion",
+      "instruction": "Preheat your oven to 350°F (175°C). Line a baking sheet with parchment paper. Scoop the dough into 1-inch balls (about 2 tablespoons each) and place at least 2 inches apart.",
+      "timer": {
+        "seconds": 600,
+        "label": "Preheat",
+        "rangeText": "while you portion"
+      }
+    },
+    {
+      "title": "Bake",
+      "instruction": "Bake for 9–12 minutes, until the edges are just golden and the centers still look slightly underdone — they'll finish setting as they cool.",
+      "timer": {
+        "seconds": 540,
+        "label": "Bake",
+        "rangeText": "9–12 minutes"
+      }
+    },
+    {
+      "title": "Cool",
+      "instruction": "Allow cookies to cool on the baking sheet for 5 minutes, then transfer to a wire rack to cool completely.",
+      "timer": {
+        "seconds": 300,
+        "label": "Cool on sheet",
+        "rangeText": "5 minutes"
+      }
+    }
+  ]
+}
