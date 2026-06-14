@@ -1,0 +1,120 @@
+{
+  "id": "cinnamon-raisin",
+  "name": "Cinnamon Raisin Bread",
+  "category": "Bread",
+  "emoji": "🍞",
+  "yield": "1 loaf",
+  "totalTime": "About 24 hours (incl. proof)",
+  "difficulty": "Intermediate",
+  "summary": "A lightly sweet sourdough studded with raisins and a cinnamon swirl.",
+  "ingredients": [
+    {
+      "item": "120g active sourdough starter"
+    },
+    {
+      "item": "400g bread flour (or all-purpose)"
+    },
+    {
+      "item": "280g lukewarm water"
+    },
+    {
+      "item": "75g raisins (soaked and patted dry)"
+    },
+    {
+      "item": "30g granulated sugar"
+    },
+    {
+      "item": "1½ teaspoons ground cinnamon"
+    }
+  ],
+  "tips": [
+    "Add a handful of chopped walnuts or pecans for extra texture and flavor.",
+    "For a softer, more enriched dough, you can add 10–20g honey or a splash of milk (reduce water slightly).",
+    "Cinnamon slows fermentation — do not mix it into the dough too early. Keep it in the swirl or mix with sugar and add toward the end of bulk.",
+    "Pairs perfectly with butter, cream cheese, or toasted with a drizzle of maple syrup."
+  ],
+  "steps": [
+    {
+      "title": "Soak Raisins",
+      "instruction": "Soak the raisins in warm water for 15–20 minutes, then drain and pat dry. This prevents them from drawing moisture from the dough.",
+      "timer": {
+        "seconds": 900,
+        "label": "Soak raisins",
+        "rangeText": "15–20 minutes"
+      }
+    },
+    {
+      "title": "Mix the Dough",
+      "instruction": "In a large bowl, mix the starter and water until dissolved. Add flour and mix until a shaggy dough forms. Cover and let rest for 30–45 minutes.",
+      "timer": {
+        "seconds": 1800,
+        "label": "Autolyse rest",
+        "rangeText": "30–45 minutes"
+      }
+    },
+    {
+      "title": "Add Salt",
+      "instruction": "Sprinkle salt over the dough and incorporate by gently folding and pressing."
+    },
+    {
+      "title": "Stretch & Folds",
+      "instruction": "During roughly the first 2 hours, perform 2–3 sets of stretch and folds — one set every 30–45 minutes. On the final fold, gently add the soaked raisins to distribute them evenly. Reset the timer after each fold.",
+      "timer": {
+        "seconds": 1800,
+        "label": "Until next fold",
+        "rangeText": "every 30–45 min · 2–3 sets"
+      },
+      "tip": "Add the soaked raisins on the final fold so they distribute evenly."
+    },
+    {
+      "title": "Bulk Fermentation",
+      "instruction": "After your folds, let the dough continue at room temperature until puffy and risen by about half — roughly 4–5 hours total from mixing.",
+      "timer": {
+        "seconds": 7200,
+        "label": "Bulk fermentation",
+        "rangeText": "about 2–3 h more · 4–5 h total"
+      }
+    },
+    {
+      "title": "Optional Swirl",
+      "instruction": "For a cinnamon swirl: after bulk fermentation, roll the dough into a rectangle. Sprinkle the cinnamon-sugar over the surface, then roll up like a log and shape into a round.",
+      "tip": "Keep cinnamon in the swirl rather than the dough — it slows fermentation."
+    },
+    {
+      "title": "Final Proof",
+      "instruction": "Place the shaped dough seam-side up into a floured proofing basket or cloth-lined bowl. Cover and proof at room temperature for 1–2 hours, or refrigerate overnight for 8–12 hours.",
+      "timer": {
+        "seconds": 3600,
+        "label": "Final proof (room temp)",
+        "rangeText": "1–2 hours, or 8–12 hours in fridge"
+      }
+    },
+    {
+      "title": "Preheat & Bake",
+      "instruction": "Preheat oven to 475°F (245°C) with a Dutch oven inside for 30 minutes. Invert the dough onto parchment, score the top, and transfer to the hot pot. Bake covered for 25 minutes, then uncover and bake another 20–25 minutes until golden brown.",
+      "timer": {
+        "seconds": 1500,
+        "label": "Bake covered",
+        "rangeText": "25 minutes"
+      }
+    },
+    {
+      "title": "Bake Uncovered",
+      "instruction": "Remove the lid and bake another 20–25 minutes until golden brown.",
+      "timer": {
+        "seconds": 1320,
+        "label": "Bake uncovered",
+        "rangeText": "20–25 minutes"
+      }
+    },
+    {
+      "title": "Cool",
+      "instruction": "Let cool completely on a wire rack for at least 1 hour before slicing to allow the crumb to set.",
+      "timer": {
+        "seconds": 3600,
+        "label": "Cool",
+        "rangeText": "at least 1 hour"
+      }
+    }
+  ]
+}

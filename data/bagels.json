@@ -1,0 +1,98 @@
+{
+  "id": "bagels",
+  "name": "Bagels",
+  "category": "Bread",
+  "emoji": "🥯",
+  "yield": "8 bagels",
+  "totalTime": "About 24 hours (incl. cold proof)",
+  "difficulty": "Intermediate",
+  "summary": "Chewy boiled-then-baked sourdough bagels with a glossy crust.",
+  "ingredients": [
+    {
+      "item": "150g active sourdough starter"
+    },
+    {
+      "item": "240g water"
+    },
+    {
+      "item": "360g bread flour (high-protein recommended)"
+    },
+    {
+      "item": "25g sugar (for flavor and browning)"
+    },
+    {
+      "item": "9g fine sea salt"
+    },
+    {
+      "item": "2.5g baking soda (optional, mixed into the boiling water)"
+    },
+    {
+      "item": "Optional toppings: sesame seeds, poppy seeds, everything seasoning"
+    }
+  ],
+  "tips": [
+    "For a shiny crust, brush boiled bagels with a beaten egg before baking.",
+    "To test readiness for boiling, drop one bagel in water — if it floats, it's ready.",
+    "Under-proofed bagels have better chew and appearance but can be made same-day if time is tight.",
+    "Bagels freeze well. Slice before freezing for quick toasting."
+  ],
+  "steps": [
+    {
+      "title": "Make the Dough",
+      "instruction": "In a large bowl, mix the active starter and water until well combined. Add 240g of the bread flour and stir into a sticky dough. Add the sugar and salt, and mix thoroughly. Gradually add the remaining flour while kneading until the dough becomes smooth, stiff, and elastic (about 8–10 minutes by hand or 5 minutes with a stand mixer)."
+    },
+    {
+      "title": "Bulk Fermentation",
+      "instruction": "Cover the dough with a lid or damp towel and let it ferment at room temperature for 4–6 hours, until slightly puffy but not doubled.",
+      "timer": {
+        "seconds": 14400,
+        "label": "Bulk fermentation",
+        "rangeText": "4–6 hours"
+      }
+    },
+    {
+      "title": "Shape the Bagels",
+      "instruction": "Turn the dough out onto a lightly floured surface. Divide into 8 equal pieces (around 100g each). Roll each into a tight ball, then poke a hole in the center of each ball and gently stretch into a ring."
+    },
+    {
+      "title": "Cold Proof (Optional but Recommended)",
+      "instruction": "Place the shaped bagels on a parchment-lined tray. Cover loosely and refrigerate overnight (8–12 hours). This improves flavor, structure, and surface drying — essential for the chewy crust.",
+      "timer": {
+        "seconds": 28800,
+        "label": "Cold proof",
+        "rangeText": "8–12 hours"
+      }
+    },
+    {
+      "title": "Boil the Bagels",
+      "instruction": "Preheat your oven to 425°F (220°C). Bring a large pot of water to a gentle boil and add the baking soda (optional — helps browning). Boil each bagel for 30–45 seconds per side. Remove with a slotted spoon and return to the parchment.",
+      "timer": {
+        "seconds": 30,
+        "label": "Boil first side",
+        "rangeText": "30–45 seconds"
+      }
+    },
+    {
+      "title": "Add Toppings (Optional)",
+      "instruction": "While the bagels are still damp, sprinkle with sesame seeds, poppy seeds, or your favorite seasoning blend."
+    },
+    {
+      "title": "Bake",
+      "instruction": "Bake at 425°F (220°C) for 20–25 minutes, until golden brown and firm. Rotate the tray halfway through for even browning.",
+      "timer": {
+        "seconds": 1200,
+        "label": "Bake",
+        "rangeText": "20–25 minutes"
+      }
+    },
+    {
+      "title": "Cool & Enjoy",
+      "instruction": "Let the bagels cool on a wire rack for at least 30 minutes before slicing. Best enjoyed fresh or toasted with your favorite toppings.",
+      "timer": {
+        "seconds": 1800,
+        "label": "Cool",
+        "rangeText": "at least 30 minutes"
+      }
+    }
+  ]
+}

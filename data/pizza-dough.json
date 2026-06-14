@@ -1,0 +1,94 @@
+{
+  "id": "pizza-dough",
+  "name": "Sourdough Pizza Dough",
+  "category": "Bread",
+  "emoji": "🍕",
+  "yield": "2–3 pizzas",
+  "totalTime": "About 24 hours (incl. cold ferment)",
+  "difficulty": "Intermediate",
+  "summary": "A chewy, blistered sourdough pizza base with a long cold ferment for flavor.",
+  "ingredients": [
+    {
+      "item": "120g active sourdough starter"
+    },
+    {
+      "item": "390g lukewarm water"
+    },
+    {
+      "item": "500g all-purpose or 00 flour"
+    },
+    {
+      "item": "10g fine sea salt"
+    },
+    {
+      "item": "20g olive oil"
+    }
+  ],
+  "tips": [
+    "For extra chew and flavor, use a 50/50 mix of bread flour and 00 flour.",
+    "If the dough resists stretching, let it rest for 10 minutes and try again — it relaxes and gets easier.",
+    "You can freeze dough balls raw after the cold ferment — just thaw overnight in the fridge before use."
+  ],
+  "steps": [
+    {
+      "title": "Mix the Dough",
+      "instruction": "In a large bowl, mix the sourdough starter and lukewarm water until dissolved. Add the flour and mix with a spoon (or by hand) until no dry bits remain. Let rest for 30 minutes (autolyse).",
+      "timer": {
+        "seconds": 1800,
+        "label": "Autolyse rest",
+        "rangeText": "30 minutes"
+      }
+    },
+    {
+      "title": "Add Salt and Oil",
+      "instruction": "Sprinkle the salt evenly and drizzle the olive oil over the dough. Mix well by folding the dough until both salt and oil are fully incorporated."
+    },
+    {
+      "title": "Stretch & Folds",
+      "instruction": "During roughly the first 2 hours, perform 2–3 sets of stretch and folds — one set every 30–45 minutes — to build gluten strength. Reset the timer after each fold.",
+      "timer": {
+        "seconds": 1800,
+        "label": "Until next fold",
+        "rangeText": "every 30–45 min · 2–3 sets"
+      },
+      "tip": "Keep the room around 70–75°F / 21–24°C for an even ferment."
+    },
+    {
+      "title": "Bulk Fermentation",
+      "instruction": "After your folds, let the dough continue at room temperature until puffy and risen by about half — roughly 4–6 hours total from mixing.",
+      "timer": {
+        "seconds": 7200,
+        "label": "Bulk fermentation",
+        "rangeText": "about 2–4 h more · 4–6 h total"
+      }
+    },
+    {
+      "title": "Cold Ferment (Optional but Recommended)",
+      "instruction": "After bulk fermentation, divide the dough into 2–3 portions. Shape into balls and place in lightly oiled containers or dough boxes. Cover and refrigerate for 12–48 hours — this develops flavor and makes the dough easier to stretch.",
+      "timer": {
+        "seconds": 43200,
+        "label": "Cold ferment",
+        "rangeText": "12–48 hours"
+      },
+      "tip": "Longer cold ferment = more flavor. 24 hours is a great sweet spot."
+    },
+    {
+      "title": "Bring to Room Temperature",
+      "instruction": "Take the dough out 1–2 hours before baking to come to room temperature and relax.",
+      "timer": {
+        "seconds": 3600,
+        "label": "Warm up",
+        "rangeText": "1–2 hours"
+      }
+    },
+    {
+      "title": "Shape and Bake",
+      "instruction": "Preheat your oven to its highest temperature (ideally 475–500°F / 245–260°C) with a pizza stone or steel inside if possible. Lightly flour your surface, stretch each dough ball into a pizza round, and add your favorite toppings. Bake for 7–10 minutes until golden and bubbly.",
+      "timer": {
+        "seconds": 420,
+        "label": "Bake",
+        "rangeText": "7–10 minutes"
+      }
+    }
+  ]
+}

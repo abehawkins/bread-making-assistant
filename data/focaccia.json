@@ -1,0 +1,113 @@
+{
+  "id": "focaccia",
+  "name": "Focaccia",
+  "category": "Bread",
+  "emoji": "🫠",
+  "yield": "1 pan",
+  "totalTime": "About 24 hours (incl. cold proof)",
+  "difficulty": "Beginner",
+  "summary": "A dimpled, olive-oil-rich flatbread that's hard to get wrong.",
+  "ingredients": [
+    {
+      "item": "100g active sourdough starter"
+    },
+    {
+      "item": "320g lukewarm water"
+    },
+    {
+      "item": "400g bread flour (or all-purpose)"
+    },
+    {
+      "item": "8g sea salt"
+    },
+    {
+      "item": "10g olive oil (plus extra for drizzling)"
+    },
+    {
+      "item": "5g sugar"
+    },
+    {
+      "item": "Fresh or dried herbs (e.g. rosemary, thyme, oregano) — optional"
+    },
+    {
+      "item": "Optional toppings: sliced olives, tomatoes, garlic, red onion"
+    }
+  ],
+  "tips": [
+    "Cold fermentation is optional but recommended for better flavor and texture. From step 3, cover edges and refrigerate.",
+    "The dough will be sticky — that's normal. Use wet or oiled hands when handling it.",
+    "Use sea or flaky salt and spelt for a rustic touch, or whole wheat for extra flavor.",
+    "Focaccia freezes well. Let it cool completely before freezing in slices."
+  ],
+  "steps": [
+    {
+      "title": "Mix the Dough",
+      "instruction": "Mix the sourdough starter, water, sugar, and olive oil until mostly combined. Add the flour and salt, then mix until a shaggy, sticky dough forms. No need to knead at this stage."
+    },
+    {
+      "title": "Rest & Stretch and Folds",
+      "instruction": "Cover the dough and let it rest 30 minutes. Then perform 2–3 sets of stretch and folds, one set every 30–45 minutes, to strengthen the gluten. The timer covers the initial rest and each fold interval — reset it after every fold.",
+      "timer": {
+        "seconds": 1800,
+        "label": "Rest / until next fold",
+        "rangeText": "30 min, then every 30–45 min"
+      },
+      "tip": "The dough is wet and sticky — wet your hands so it doesn't stick during folds."
+    },
+    {
+      "title": "Bulk Fermentation",
+      "instruction": "After the final fold, cover the bowl lightly and let it ferment at room temperature until noticeably puffy and expanded — about 6–8 hours.",
+      "timer": {
+        "seconds": 21600,
+        "label": "Bulk fermentation",
+        "rangeText": "6–8 hours"
+      }
+    },
+    {
+      "title": "Cold Fermentation (Recommended)",
+      "instruction": "Transfer the dough to an oiled container and refrigerate overnight (8–24 hours). This step enhances flavor and makes the dough easier to handle.",
+      "timer": {
+        "seconds": 28800,
+        "label": "Cold ferment",
+        "rangeText": "8–24 hours"
+      },
+      "tip": "Optional but recommended for the best flavor and texture."
+    },
+    {
+      "title": "Shape & Second Rise",
+      "instruction": "Grease a baking pan generously with olive oil. Transfer the dough to the pan and gently stretch it to fill the edges. If it resists, let it rest for 10–15 minutes, then try again. Cover and let it rise at room temperature for 1–2 hours until bubbly.",
+      "timer": {
+        "seconds": 3600,
+        "label": "Second rise",
+        "rangeText": "1–2 hours"
+      }
+    },
+    {
+      "title": "Dimple & Add Toppings",
+      "instruction": "Preheat your oven to 450°F (230°C). Drizzle the dough with more olive oil. Use oiled fingers to press deep dimples across the surface. Add herbs, coarse sea salt, and optional toppings of your choice.",
+      "timer": {
+        "seconds": 600,
+        "label": "Preheat",
+        "rangeText": "while oven heats"
+      }
+    },
+    {
+      "title": "Bake",
+      "instruction": "Bake for 20–25 minutes, or until golden brown and crisp on the edges. Rotate the pan halfway through for even browning.",
+      "timer": {
+        "seconds": 1200,
+        "label": "Bake",
+        "rangeText": "20–25 minutes"
+      }
+    },
+    {
+      "title": "Cool & Serve",
+      "instruction": "Remove from the oven and let it cool in the pan for 10 minutes, then transfer to a wire rack. Slice and enjoy warm or at room temperature.",
+      "timer": {
+        "seconds": 600,
+        "label": "Cool in pan",
+        "rangeText": "10 minutes"
+      }
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "id": "rye-sourdough",
+  "name": "Rye Sourdough Bread",
+  "category": "Bread",
+  "emoji": "🍞",
+  "yield": "1 loaf",
+  "totalTime": "About 24 hours (incl. proof)",
+  "difficulty": "Intermediate",
+  "summary": "A hearty rye loaf with a dense, rustic crumb and tangy flavor.",
+  "ingredients": [
+    {
+      "item": "120g active sourdough starter"
+    },
+    {
+      "item": "180g whole rye flour"
+    },
+    {
+      "item": "240g bread flour (or all-purpose)"
+    },
+    {
+      "item": "300–320g lukewarm water"
+    },
+    {
+      "item": "9g fine sea salt"
+    }
+  ],
+  "tips": [
+    "Rye flour absorbs more water and ferments faster than wheat flour. Watch for signs of over-proofing.",
+    "The dough will be stickier and less elastic than wheat dough — don't overwork it; gentle handling is best.",
+    "For a more rustic texture, add caraway seeds (1–2 teaspoons) to the dough, or sprinkle on top before baking.",
+    "Pairs beautifully with butter, sharp cheese, or smoked salmon."
+  ],
+  "steps": [
+    {
+      "title": "Mix the Dough",
+      "instruction": "In a large bowl, combine the starter and water. Stir in both rye and bread flour until no dry spots remain. The dough will be sticky and shaggy. Cover and rest (autolyse) for 30–45 minutes.",
+      "timer": {
+        "seconds": 1800,
+        "label": "Autolyse rest",
+        "rangeText": "30–45 minutes"
+      }
+    },
+    {
+      "title": "Add Salt",
+      "instruction": "Sprinkle the salt over the dough and incorporate it by gently folding and pressing until evenly mixed. Let rest for 15 minutes.",
+      "timer": {
+        "seconds": 900,
+        "label": "Rest",
+        "rangeText": "15 minutes"
+      }
+    },
+    {
+      "title": "Stretch & Folds",
+      "instruction": "During roughly the first 1.5 hours, perform 2–3 sets of stretch and folds — one set every 30–45 minutes — to build strength. Reset the timer after each fold.",
+      "timer": {
+        "seconds": 1800,
+        "label": "Until next fold",
+        "rangeText": "every 30–45 min · 2–3 sets"
+      },
+      "tip": "Rye dough is stickier and won't get as elastic as wheat — handle it gently."
+    },
+    {
+      "title": "Bulk Fermentation",
+      "instruction": "After your folds, let the dough continue at room temperature until puffy and risen by about half — roughly 4–5 hours total from mixing. It won't become as elastic as wheat; this is normal for rye.",
+      "timer": {
+        "seconds": 9000,
+        "label": "Bulk fermentation",
+        "rangeText": "about 2.5–3.5 h more · 4–5 h total"
+      },
+      "tip": "Rye ferments faster — watch closely for over-proofing."
+    },
+    {
+      "title": "Pre-shape and Rest",
+      "instruction": "Turn the dough onto a lightly floured surface and gently shape into a round. Rest uncovered for 20–30 minutes.",
+      "timer": {
+        "seconds": 1200,
+        "label": "Bench rest",
+        "rangeText": "20–30 minutes"
+      }
+    },
+    {
+      "title": "Final Shape",
+      "instruction": "Tighten the dough into a smooth round or oval and place seam-side up in a floured proofing basket or a bowl lined with a floured cloth."
+    },
+    {
+      "title": "Final Proof",
+      "instruction": "Cover and let rise for 1–2 hours at room temperature, or refrigerate for 8–12 hours for enhanced flavor.",
+      "timer": {
+        "seconds": 3600,
+        "label": "Final proof (room temp)",
+        "rangeText": "1–2 hours, or 8–12 hours in fridge"
+      }
+    },
+    {
+      "title": "Preheat & Bake",
+      "instruction": "Preheat the oven to 475°F (245°C) with a Dutch oven inside for at least 30 minutes. Carefully invert the dough onto parchment, score the top, and place it into the hot pot. Bake covered for 25 minutes, then uncover and bake another 20–25 minutes until dark brown.",
+      "timer": {
+        "seconds": 1500,
+        "label": "Bake covered",
+        "rangeText": "25 minutes"
+      }
+    },
+    {
+      "title": "Bake Uncovered",
+      "instruction": "Remove the lid and bake another 20–25 minutes until dark brown.",
+      "timer": {
+        "seconds": 1320,
+        "label": "Bake uncovered",
+        "rangeText": "20–25 minutes"
+      }
+    },
+    {
+      "title": "Cool",
+      "instruction": "Cool completely on a wire rack for at least 1 hour before slicing. The crumb will continue to set as it cools.",
+      "timer": {
+        "seconds": 3600,
+        "label": "Cool",
+        "rangeText": "at least 1 hour"
+      }
+    }
+  ]
+}

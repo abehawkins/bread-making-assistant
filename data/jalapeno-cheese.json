@@ -1,0 +1,123 @@
+{
+  "id": "jalapeno-cheese",
+  "name": "Jalapeño Cheddar Sourdough Bread",
+  "category": "Bread",
+  "emoji": "🌶️",
+  "yield": "1 loaf",
+  "totalTime": "About 24 hours (incl. proof)",
+  "difficulty": "Intermediate",
+  "summary": "A savory, spicy sourdough loaded with sharp cheddar and jalapeños.",
+  "ingredients": [
+    {
+      "item": "100g active sourdough starter"
+    },
+    {
+      "item": "400g bread flour (or all-purpose)"
+    },
+    {
+      "item": "280g lukewarm water"
+    },
+    {
+      "item": "8g fine sea salt"
+    },
+    {
+      "item": "100–120g sharp cheddar, cubed"
+    },
+    {
+      "item": "40–60g sliced jalapeños (fresh or pickled; seeds removed for milder flavor)"
+    }
+  ],
+  "tips": [
+    "Want it cheesier? Add up to 150g cheddar, but be sure to drain any oil or moisture.",
+    "Want more heat? Leave in some fresh chilis or jalapeño seeds.",
+    "Great as toast."
+  ],
+  "steps": [
+    {
+      "title": "Mix the Dough",
+      "instruction": "In a large bowl, mix the starter and water until mostly dissolved. Add the flour and stir until a shaggy dough forms. Cover and rest for 30–45 minutes.",
+      "timer": {
+        "seconds": 1800,
+        "label": "Autolyse rest",
+        "rangeText": "30–45 minutes"
+      }
+    },
+    {
+      "title": "Add Salt",
+      "instruction": "Sprinkle salt over the dough and work it in using folding and pinching motions. Let rest for 15 minutes.",
+      "timer": {
+        "seconds": 900,
+        "label": "Rest",
+        "rangeText": "15 minutes"
+      }
+    },
+    {
+      "title": "Stretch & Folds",
+      "instruction": "During roughly the first 2 hours, perform 2–3 sets of stretch and folds — one set every 30–45 minutes. On the second or third set, gently add the cubed cheddar and sliced jalapeños, spreading them evenly through the dough. Reset the timer after each fold.",
+      "timer": {
+        "seconds": 1800,
+        "label": "Until next fold",
+        "rangeText": "every 30–45 min · 2–3 sets"
+      },
+      "tip": "Add cheese and jalapeños on the 2nd or 3rd fold so they spread evenly."
+    },
+    {
+      "title": "Bulk Fermentation",
+      "instruction": "After your folds, let the dough continue at room temperature until puffy and risen by about half — roughly 4–5 hours total from mixing.",
+      "timer": {
+        "seconds": 7200,
+        "label": "Bulk fermentation",
+        "rangeText": "about 2–3 h more · 4–5 h total"
+      }
+    },
+    {
+      "title": "Pre-shape and Rest",
+      "instruction": "Turn the dough onto a lightly floured surface. Shape into a round and let rest uncovered for 20–30 minutes.",
+      "timer": {
+        "seconds": 1200,
+        "label": "Bench rest",
+        "rangeText": "20–30 minutes"
+      }
+    },
+    {
+      "title": "Final Shape",
+      "instruction": "Reshape into a tight ball and place seam side up in a floured proofing basket or a bowl lined with a floured cloth."
+    },
+    {
+      "title": "Final Proof",
+      "instruction": "Let rise for 1–2 hours at room temperature, or cover and refrigerate overnight for 8–12 hours.",
+      "timer": {
+        "seconds": 3600,
+        "label": "Final proof (room temp)",
+        "rangeText": "1–2 hours, or 8–12 hours in fridge"
+      }
+    },
+    {
+      "title": "Preheat & Bake",
+      "instruction": "Preheat oven to 475°F (245°C) with a Dutch oven inside for at least 30 minutes. Invert the dough onto parchment paper, score the top, and transfer to the hot pot. Bake covered for 25 minutes, then uncover and bake another 20–25 minutes until deep golden brown.",
+      "timer": {
+        "seconds": 1500,
+        "label": "Bake covered",
+        "rangeText": "25 minutes"
+      }
+    },
+    {
+      "title": "Bake Uncovered",
+      "instruction": "Remove the lid and bake another 20–25 minutes until deep golden brown.",
+      "timer": {
+        "seconds": 1320,
+        "label": "Bake uncovered",
+        "rangeText": "20–25 minutes"
+      }
+    },
+    {
+      "title": "Cool",
+      "instruction": "Transfer to a wire rack and cool completely — at least 1 hour — before slicing.",
+      "timer": {
+        "seconds": 3600,
+        "label": "Cool",
+        "rangeText": "at least 1 hour"
+      }
+    }
+  ]
+}
