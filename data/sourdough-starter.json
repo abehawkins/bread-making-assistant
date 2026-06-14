@@ -1,0 +1,55 @@
+{
+  "id": "sourdough-starter",
+  "name": "Make a Sourdough Starter",
+  "category": "Starter",
+  "emoji": "🥙",
+  "yield": "1 active starter",
+  "totalTime": "7+ days",
+  "difficulty": "Beginner",
+  "summary": "Build a wild-yeast starter from scratch over about a week using a 1:1:1 feeding ratio.",
+  "ingredients": [
+    {
+      "item": "Unbleached all-purpose or whole wheat flour"
+    },
+    {
+      "item": "Lukewarm filtered water"
+    },
+    {
+      "item": "A clean glass or plastic container"
+    },
+    {
+      "item": "Digital kitchen scale"
+    },
+    {
+      "item": "Spoon or spatula"
+    }
+  ],
+  "tips": [
+    "Always feed by weight using a 1:1:1 ratio (equal parts starter, flour, water).",
+    "For minimal waste, you can feed with 60g flour + 60g water per feeding.",
+    "Keep at room temperature (68–70°F / 20–21°C). If your home is cold, place it in the (turned-off) oven with the light on, or a proofing box.",
+    "Don't worry if activity slows around Day 4–5 — that's normal.",
+    "An established starter can be maintained by feeding regularly. Always discard about half before feeding to prevent overflow and keep the ratio balanced."
+  ],
+  "steps": [
+    {
+      "title": "Day 1 — Mix Flour and Water",
+      "instruction": "Mix 60g (½ cup) unbleached all-purpose or whole wheat flour with 60g (¼ cup) lukewarm water in your container until it looks like a thick batter. Cover loosely and set at room temperature (68–70°F) for 24 hours.",
+      "tip": "If your home is cold, place it in the GIYUDOT bread proofing box or a warm spot."
+    },
+    {
+      "title": "Day 2 — First Feeding",
+      "instruction": "You may or may not see bubbles yet. Discard half of the mixture (keep 60g), then feed with 60g all-purpose flour and 60g water. Stir, cover loosely, and rest 24 hours."
+    },
+    {
+      "title": "Days 3–6 — Daily Feeding",
+      "instruction": "Feed once per day: discard back to 60g and add 60g flour + 60g water. By Day 3 or 4 you should see small bubbles, a rise, and a fruity smell. If activity slows down around Day 4–5, that's normal — keep going.",
+      "tip": "Don't worry if your starter progresses slower or faster than expected. The most reliable signs of health are a bubbly texture and a pleasantly tangy, slightly yeasty aroma."
+    },
+    {
+      "title": "Day 7 and Onward — Ready to Bake",
+      "instruction": "When your starter reliably doubles in size within 4–6 hours of feeding, smells pleasantly tangy, and has lots of bubbles, it's ready for baking. If needed, switch to whole wheat or rye flour for a few feedings to boost activity. Your starter is now established and can be used to make delicious sourdough bread.",
+      "tip": "To maintain: feed regularly. If you don't bake often, store in the fridge and feed once a week. Always discard about half before feeding."
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "id": "beginner-bread",
+  "name": "Beginner Bread",
+  "category": "Bread",
+  "emoji": "🍞",
+  "yield": "1 loaf",
+  "totalTime": "About 24 hours (incl. proof)",
+  "difficulty": "Beginner",
+  "summary": "A forgiving first sourdough loaf with overnight proof and a Dutch-oven bake.",
+  "ingredients": [
+    {
+      "item": "100g active sourdough starter"
+    },
+    {
+      "item": "400g bread flour (or all-purpose)"
+    },
+    {
+      "item": "280g lukewarm water"
+    },
+    {
+      "item": "8g fine sea salt"
+    }
+  ],
+  "tips": [
+    "If your dough is ready for shaping when it's puffy and slightly jiggly, not sticky and collapsing.",
+    "If you're short on time, skip the overnight proof and bake after the 1–2 hour second rise.",
+    "Don't skip the cooling! Cutting too soon will ruin the crumb texture.",
+    "Want a softer crust? Wrap the warm bread in a kitchen towel after cooling 15 minutes."
+  ],
+  "steps": [
+    {
+      "title": "Mix the Dough",
+      "instruction": "In a large bowl, mix the starter and water until mostly dissolved. Add flour and stir until a shaggy dough forms. Cover and let rest (autolyse) for 30–45 minutes.",
+      "timer": {
+        "seconds": 1800,
+        "label": "Autolyse rest",
+        "rangeText": "30–45 minutes"
+      }
+    },
+    {
+      "title": "Add Salt",
+      "instruction": "Sprinkle salt over the dough and incorporate by hand, folding and gently pressing until fully combined."
+    },
+    {
+      "title": "Stretch & Folds",
+      "instruction": "During roughly the first 2 hours, perform 2–3 rounds of stretch and folds — one set every 30–45 minutes — to build strength. The timer counts each interval; reset it after every fold.",
+      "timer": {
+        "seconds": 1800,
+        "label": "Until next fold",
+        "rangeText": "every 30–45 min · 2–3 sets"
+      },
+      "tip": "A set is a few folds around the bowl; the dough gets smoother and stronger each time."
+    },
+    {
+      "title": "Bulk Fermentation",
+      "instruction": "After your folds, let the dough continue at room temperature until it looks puffy and has risen by about half. Counting from mixing, that is roughly 4–6 hours total.",
+      "timer": {
+        "seconds": 7200,
+        "label": "Bulk fermentation",
+        "rangeText": "about 2–4 h more · 4–6 h total"
+      }
+    },
+    {
+      "title": "Pre-shape",
+      "instruction": "Turn the dough out onto a lightly floured surface. Gently shape it into a round and let it rest, uncovered, for 20–30 minutes.",
+      "timer": {
+        "seconds": 1200,
+        "label": "Bench rest",
+        "rangeText": "20–30 minutes"
+      }
+    },
+    {
+      "title": "Final Shaping",
+      "instruction": "Reshape the dough into a tight ball or oval. Place it seam-side up in a floured proofing basket or bowl lined with a floured cloth.",
+      "tip": "The dough is ready for shaping when it's puffy and slightly jiggly, not sticky."
+    },
+    {
+      "title": "Final Proof",
+      "instruction": "Cover and let rise at room temperature for 1–2 hours, or refrigerate overnight (8–12 hours) for improved flavor and structure.",
+      "timer": {
+        "seconds": 3600,
+        "label": "Final proof (room temp)",
+        "rangeText": "1–2 hours, or 8–12 hours in fridge"
+      },
+      "tip": "Short on time? The room-temp proof is fine. For best flavor, use the overnight fridge proof."
+    },
+    {
+      "title": "Preheat Oven",
+      "instruction": "Place a Dutch oven in your oven and preheat to 475°F (245°C) for at least 30 minutes before baking.",
+      "timer": {
+        "seconds": 1800,
+        "label": "Preheat",
+        "rangeText": "at least 30 minutes"
+      }
+    },
+    {
+      "title": "Score and Bake",
+      "instruction": "Invert the dough onto parchment, score the top with a sharp blade, and carefully transfer it to the hot Dutch oven. Bake covered for 20–25 minutes, then remove the lid and bake 20–25 minutes uncovered, until deep golden brown.",
+      "timer": {
+        "seconds": 1320,
+        "label": "Bake covered",
+        "rangeText": "20–25 minutes"
+      }
+    },
+    {
+      "title": "Bake Uncovered",
+      "instruction": "Remove the lid and continue baking uncovered for 20–25 minutes until deep golden brown.",
+      "timer": {
+        "seconds": 1320,
+        "label": "Bake uncovered",
+        "rangeText": "20–25 minutes"
+      }
+    },
+    {
+      "title": "Cool",
+      "instruction": "Transfer the baked loaf to a wire rack and cool at least 1 hour before slicing.",
+      "timer": {
+        "seconds": 3600,
+        "label": "Cool",
+        "rangeText": "at least 1 hour"
+      },
+      "tip": "Don't skip cooling — cutting too soon ruins the crumb. For a softer crust, wrap the warm loaf in a towel after 15 minutes."
+    }
+  ]
+}

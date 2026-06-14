@@ -1,0 +1,48 @@
+{
+  "id": "feeding-caring-starter",
+  "name": "Feeding & Caring for Your Starter",
+  "category": "Starter",
+  "emoji": "🥣",
+  "yield": "Maintained starter",
+  "totalTime": "Ongoing",
+  "difficulty": "Beginner",
+  "summary": "How to keep an established starter healthy day-to-day and in the fridge.",
+  "ingredients": [
+    {
+      "item": "Established sourdough starter"
+    },
+    {
+      "item": "Flour (all-purpose, whole wheat, or rye)"
+    },
+    {
+      "item": "Lukewarm water"
+    }
+  ],
+  "tips": [
+    "The float test isn't always reliable. If your starter is active and ready to use, it's normal for it to fail before using it — any time after its peak is fine.",
+    "Hooch (a gray or brown liquid forming on top) means it has started producing alcohol. Pour it off or stir it in (stirring adds sour flavor) before using.",
+    "Over time, you can adjust the size and flour type of your starter. Increase or decrease flour and water based on your needs."
+  ],
+  "steps": [
+    {
+      "title": "Daily Room-Temperature Feeding",
+      "instruction": "Keep your starter on the counter and feed it daily for up to two weeks. A consistently fed starter doubles after each feeding, is active and ready to use, and helps build strength after activation.",
+      "tip": "It's normal for the starter to rise and fall — use it any time after its peak. The longer past peak, the tangier the flavor."
+    },
+    {
+      "title": "Refrigerator Storage",
+      "instruction": "If storing in the fridge, feed your starter once per week or at least every 4–12 hours before baking (whichever comes first). Take it out, feed it, and let it build activation before mixing your dough.",
+      "tip": "Many people leave the starter in the fridge unfed for longer periods — this is acceptable as long as there is no mold. It may need several feedings to re-activate."
+    },
+    {
+      "title": "Using Cold Starter",
+      "instruction": "You don't always need to bring your starter to room temperature before using it. You can use it straight from the fridge in a mix, then place it back in the fridge without feeding again.",
+      "tip": "If you bake every 3–4 days or less, you can feed your starter after mixing a recipe, allow it to peak, refrigerate it, and use it straight from the fridge next time."
+    },
+    {
+      "title": "Adjusting Consistency",
+      "instruction": "If a recipe calls for a specific amount of active starter, divide that number by two and feed equal amounts of flour and water to reach the quantity needed.",
+      "tip": "If your starter feels very thick after feeding and watery 24 hours later, that's a sign it's actively fermenting. Adjust thickness by slightly changing the flour ratio."
+    }
+  ]
+}
