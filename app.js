@@ -199,14 +199,14 @@ function renderImport(){
   <textarea class="fi" id="pasteBox" placeholder="Sourdough Crackers&#10;&#10;Ingredients&#10;100g discard&#10;...&#10;&#10;Instructions&#10;1. Mix everything&#10;2. Bake 20 minutes"></textarea>
   <label class="fl">Recipe name</label><input class="fi" id="pasteName" placeholder="My New Recipe" />
   <div class="btnrow"><button class="btn primary" id="parseBtn">Parse & Preview</button><button class="btn ghost" id="aiFixBtn">Fix with AI ✨</button></div>
-  <div class="section-title">3 · Import a file</div><div class="hint">Import a recipe .json exported from this app.</div>
+  <div class="section-title">3 · Import a file</div><div class="hint">Import a recipe .json exported from this app — or a bundle file containing many recipes.</div>
   <input class="fi" type="file" id="fileImp" accept="application/json,.json" />
   <div class="section-title">4 · Build from scratch</div><div class="btnrow"><button class="btn ghost" id="blankBtn">Open blank editor</button></div>`;
   document.getElementById("urlBtn").onclick=()=>importFromUrl();
   document.getElementById("parseBtn").onclick=()=>{const txt=document.getElementById("pasteBox").value.trim();const nm=document.getElementById("pasteName").value.trim();if(!txt){toast("Paste a recipe first");return}current=parseRecipe(txt,nm);go("edit",{recipe:current})};
   document.getElementById("aiFixBtn").onclick=()=>aiFixPaste();
   document.getElementById("blankBtn").onclick=()=>{current=blankRecipe();go("edit",{recipe:current})};
-  document.getElementById("fileImp").onchange=(e)=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{try{const r=JSON.parse(rd.result);r.id=uid(r.name||"imported");r.category=r.category||"Imported";saveCustomRecipe(r);toast("Imported!");go("detail",{recipe:r})}catch(err){toast("Couldn't read that file")}};rd.readAsText(f)};
+  document.getElementById("fileImp").onchange=(e)=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{try{const j=JSON.parse(rd.result);const arr=(Array.isArray(j)?j:[j]).filter(r=>r&&r.name);if(!arr.length){toast("No recipes found in that file");return}for(const r of arr){r.id=uid(r.name||"imported");r.category=r.category||"Imported";saveCustomRecipe(r)}if(arr.length===1){toast("Imported!");go("detail",{recipe:arr[0]})}else{toast("Imported "+arr.length+" recipes!");go("home")}}catch(err){toast("Couldn't read that file")}};rd.readAsText(f)};
 }
 async function importFromUrl(){
   const input=document.getElementById("urlBox"),btn=document.getElementById("urlBtn");
