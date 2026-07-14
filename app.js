@@ -12,6 +12,13 @@ let RECIPES_BUILTIN=[];
 function getCustom(){try{return JSON.parse(localStorage.getItem(LS_CUSTOM)||"[]")}catch(e){return[]}}
 function setCustom(a){localStorage.setItem(LS_CUSTOM,JSON.stringify(a))}
 function allRecipes(){return RECIPES_BUILTIN.concat(getCustom())}
+// --- Supabase synced library (open, no login) ---
+const SUPA_URL="https://bwybbjlxdqtsebhtpphy.supabase.co";
+const SUPA_KEY="sb_publishable_k4XhnjoxFVab8_CTuK9iKA_0m6otI11";
+const SUPA_H={"apikey":SUPA_KEY,"Authorization":"Bearer "+SUPA_KEY,"Content-Type":"application/json"};
+async function supaLoad(){const res=await fetch(SUPA_URL+"/rest/v1/recipes?select=data&order=updated_at.desc",{headers:SUPA_H});if(!res.ok)throw new Error("supa "+res.status);return (await res.json()).map(r=>r.data);}
+function supaUpsert(r){return fetch(SUPA_URL+"/rest/v1/recipes",{method:"POST",headers:Object.assign({},SUPA_H,{"Prefer":"resolution=merge-duplicates,return=minimal"}),body:JSON.stringify({id:r.id,name:r.name||"",category:r.category||"",emoji:r.emoji||"",data:r})}).catch(()=>{});}
+function supaDelete(id){return fetch(SUPA_URL+"/rest/v1/recipes?id=eq."+encodeURIComponent(id),{method:"DELETE",headers:Object.assign({},SUPA_H,{"Prefer":"return=minimal"})}).catch(()=>{});}
 function findRecipe(id){return allRecipes().find(r=>r.id===id)}
 
 let view="home",current=null,run=null,timer=null,history=[];
@@ -94,7 +101,7 @@ function renderDetail(){
   document.getElementById("startBtn").onclick=()=>startRun(r);
   document.getElementById("custBtn").onclick=()=>go("edit");
   document.getElementById("shareBtn").onclick=()=>exportRecipe(r);
-  const del=document.getElementById("delBtn");if(del)del.onclick=()=>{if(confirm("Delete "+r.name+"?")){setCustom(getCustom().filter(x=>x.id!==r.id));toast("Deleted");go("home")}};
+  const del=document.getElementById("delBtn");if(del)del.onclick=()=>{if(confirm("Delete "+r.name+"?")){setCustom(getCustom().filter(x=>x.id!==r.id));supaDelete(r.id);toast("Deleted");go("home")}};
 }
 function renderIngredientsList(ings){
   if(!ings||!ings.length)return `<div class="small">No ingredients listed.</div>`;
@@ -273,7 +280,7 @@ function parseRecipe(text,name){
   r.totalTime=r.totalTime||"—";r.difficulty="Custom";return r;
 }
 function detectTimer(s){const m=s.match(/(\d+)\s*(?:[-–to]+\s*(\d+))?\s*(seconds?|secs?|minutes?|mins?|hours?|hrs?)/i);if(!m)return null;const lo=+m[1],unit=m[3].toLowerCase();let sec=lo;if(/min/.test(unit))sec=lo*60;else if(/h/.test(unit))sec=lo*3600;let label="Timer";const v=s.match(/\b(bake|boil|rest|proof|chill|cook|ferment|rise|cool|knead|preheat|soak|simmer|mix)\b/i);if(v)label=v[1][0].toUpperCase()+v[1].slice(1).toLowerCase();return {seconds:sec,label,rangeText:m[0]}}
-function saveCustomRecipe(r){const arr=getCustom().filter(x=>x.id!==r.id);arr.push(r);setCustom(arr)}
+function saveCustomRecipe(r){const arr=getCustom().filter(x=>x.id!==r.id);arr.push(r);setCustom(arr);supaUpsert(r)}
 function renderEdit(){
   removeFab();const r=current;const isBuiltin=RECIPES_BUILTIN.some(x=>x.id===r.id);
   appEl.innerHTML=`<div class="hint">${isBuiltin?"Editing a built-in recipe — saves as a new custom copy.":"Editing your custom recipe."}</div>
@@ -301,6 +308,18 @@ function saveFromEditor(isBuiltin){
 }
 function guessLabel(t){const m=(t||"").match(/\b(bake|boil|rest|proof|chill|cook|ferment|rise|cool|knead|preheat|soak|mix)\b/i);return m?m[1][0].toUpperCase()+m[1].slice(1).toLowerCase():null}
 // service worker
+// (Supabase synced library wired 2026-07-13)
 if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
 // load recipes
-fetch("data/index.json").then(r=>r.json()).then(ids=>Promise.all(ids.map(id=>fetch("data/"+id+".json").then(r=>r.json())))).then(arr=>{RECIPES_BUILTIN=arr;render()}).catch(e=>{appEl.innerHTML='<div class="loading">Could not load recipes. Check your connection and reload.</div>'});
+fetch("data/index.json").then(r=>r.json()).then(ids=>Promise.all(ids.map(id=>fetch("data/"+id+".json").then(r=>r.json())))).then(builtins=>{
+  RECIPES_BUILTIN=builtins;render();
+  // Pull the synced library, then reconcile local-only recipes up to it.
+  supaLoad().then(supa=>{
+    const supaIds=new Set(supa.map(x=>x&&x.id).filter(Boolean));
+    const local=getCustom();
+    const localOnly=local.filter(r=>r&&r.id&&!supaIds.has(r.id));
+    localOnly.forEach(r=>supaUpsert(r));
+    setCustom(supa.filter(r=>r&&r.name).concat(localOnly));
+    render();
+  }).catch(()=>{/* offline: keep localStorage cache */});
+}).catch(e=>{appEl.innerHTML='<div class="loading">Could not load recipes. Check your connection and reload.</div>'});
