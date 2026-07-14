@@ -1,4 +1,13 @@
 const LS_CUSTOM="bm_custom_v1";
+const LS_SECTIONS="bm_sections_v1";
+// Section -> categories map. Anything not listed falls back to "Recipes".
+const SECTION_ORDER=["Bread & Baking","Recipes"];
+const BREAD_CATEGORIES=["Starter","Bread","Sweet","Breakfast"];
+function sectionForCategory(cat){return BREAD_CATEGORIES.includes(cat)?"Bread & Baking":"Recipes"}
+function getSectionState(){try{return JSON.parse(localStorage.getItem(LS_SECTIONS)||"{}")}catch(e){return{}}}
+function isSectionOpen(name){const s=getSectionState();return s[name]!==false}
+function setSectionOpen(name,open){const s=getSectionState();s[name]=open;localStorage.setItem(LS_SECTIONS,JSON.stringify(s))}
+let homeSearchQuery="";
 let RECIPES_BUILTIN=[];
 function getCustom(){try{return JSON.parse(localStorage.getItem(LS_CUSTOM)||"[]")}catch(e){return[]}}
 function setCustom(a){localStorage.setItem(LS_CUSTOM,JSON.stringify(a))}
@@ -18,7 +27,7 @@ function toast(msg){const t=document.createElement("div");t.className="toast";t.
 
 function render(){
   backBtn.style.display=(view==="home")?"none":"flex";
-  if(view==="home"){titleEl.textContent="🍞 Bread Assistant";renderHome()}
+  if(view==="home"){titleEl.textContent="🍞 Recipe Assistant";renderHome()}
   else if(view==="detail"){titleEl.textContent=current.name;renderDetail()}
   else if(view==="run"){titleEl.textContent=current.name;renderRun()}
   else if(view==="edit"){titleEl.textContent="Customize";renderEdit()}
@@ -26,22 +35,49 @@ function render(){
 }
 function removeFab(){const f=document.getElementById("fab");if(f)f.remove()}
 
+function recipeCardHtml(r){
+  const isCustom=getCustom().some(x=>x.id===r.id);
+  return `<div class="rcard" data-id="${r.id}"><div class="emoji">${r.emoji||"🍞"}</div><div class="name">${esc(r.name)}</div><div class="meta">${esc(r.totalTime||"")} · ${(r.steps||[]).length} steps</div><div>${isCustom?'<span class="badge custom">Custom</span>':'<span class="badge">'+esc(r.difficulty||"")+'</span>'}</div></div>`;
+}
+function matchesQuery(r,q){
+  if((r.name||"").toLowerCase().includes(q))return true;
+  const ings=r.ingredients||[];
+  return ings.some(i=>((i.item||"")+" "+(i.note||"")+" "+(i.group||"")).toLowerCase().includes(q));
+}
 function renderHome(){
   const recipes=allRecipes();
-  const cats=[...new Set(recipes.map(r=>r.category))];
-  let html=`<input class="search" id="search" placeholder="Search recipes…" />`;
-  for(const c of cats){
-    html+=`<div class="cat">${esc(c)}</div><div class="grid">`;
-    for(const r of recipes.filter(x=>x.category===c)){
-      const isCustom=getCustom().some(x=>x.id===r.id);
-      html+=`<div class="rcard" data-id="${r.id}"><div class="emoji">${r.emoji||"🍞"}</div><div class="name">${esc(r.name)}</div><div class="meta">${esc(r.totalTime||"")} · ${(r.steps||[]).length} steps</div><div>${isCustom?'<span class="badge custom">Custom</span>':'<span class="badge">'+esc(r.difficulty||"")+'</span>'}</div></div>`;
+  const q=homeSearchQuery.trim().toLowerCase();
+  let html=`<input class="search" id="search" placeholder="Search recipes or ingredients…" value="${esc(homeSearchQuery)}" />`;
+  if(q){
+    const matches=recipes.filter(r=>matchesQuery(r,q));
+    html+=`<div class="cat">${matches.length} result${matches.length===1?"":"s"}</div>`;
+    if(matches.length){
+      html+=`<div class="grid">`;
+      for(const r of matches)html+=recipeCardHtml(r);
+      html+=`</div>`;
+    }else{
+      html+=`<div class="small" style="margin:4px">No recipes match “${esc(homeSearchQuery)}”.</div>`;
     }
-    html+=`</div>`;
+  }else{
+    for(const sec of SECTION_ORDER){
+      const cats=[...new Set(recipes.filter(r=>sectionForCategory(r.category)===sec).map(r=>r.category))];
+      if(!cats.length)continue;
+      const open=isSectionOpen(sec);
+      html+=`<div class="section-head" data-section="${esc(sec)}"><span class="schev">${open?"▾":"▸"}</span>${esc(sec)}</div>`;
+      if(open){
+        for(const c of cats){
+          html+=`<div class="cat">${esc(c)}</div><div class="grid">`;
+          for(const r of recipes.filter(x=>x.category===c))html+=recipeCardHtml(r);
+          html+=`</div>`;
+        }
+      }
+    }
   }
   appEl.innerHTML=html;
   appEl.querySelectorAll(".rcard").forEach(el=>el.onclick=()=>go("detail",{recipe:findRecipe(el.dataset.id)}));
+  appEl.querySelectorAll(".section-head").forEach(el=>el.onclick=()=>{const name=el.dataset.section;setSectionOpen(name,!isSectionOpen(name));renderHome()});
   const s=document.getElementById("search");
-  s.oninput=()=>{const q=s.value.toLowerCase();appEl.querySelectorAll(".rcard").forEach(el=>{const r=findRecipe(el.dataset.id);el.style.display=(r.name.toLowerCase().includes(q)||(r.summary||"").toLowerCase().includes(q))?"":"none"})};
+  s.oninput=()=>{homeSearchQuery=s.value;const pos=s.selectionStart;renderHome();const ns=document.getElementById("search");if(ns){ns.focus();ns.setSelectionRange(pos,pos)}};
   let fab=document.getElementById("fab");if(fab)fab.remove();
   fab=document.createElement("button");fab.id="fab";fab.className="fab";fab.innerHTML="＋ New / Import";fab.onclick=()=>go("import");document.body.appendChild(fab);
 }
@@ -156,16 +192,68 @@ function exportRecipe(r){
 function renderImport(){
   removeFab();
   appEl.innerHTML=`<div class="hero" style="text-align:left;padding:16px"><h2 style="font-size:19px;margin:0 0 6px">Add a recipe</h2><div class="small">Saved recipes live on this device and show a “Custom” badge.</div></div>
-  <div class="section-title">1 · Paste a recipe</div><div class="hint">Paste any recipe text (ingredients then steps). Auto-detects ingredients, steps, and timers like “bake 25 minutes”.</div>
+  <div class="section-title">1 · Import from a URL</div><div class="hint">Paste a link to a recipe page — we'll pull out the ingredients and steps automatically.</div>
+  <input class="fi" id="urlBox" placeholder="https://example.com/some-recipe" />
+  <div class="btnrow"><button class="btn primary" id="urlBtn">🔗 Fetch recipe</button></div>
+  <div class="section-title">2 · Paste a recipe</div><div class="hint">Paste any recipe text (ingredients then steps). Auto-detects ingredients, steps, and timers like “bake 25 minutes”.</div>
   <textarea class="fi" id="pasteBox" placeholder="Sourdough Crackers&#10;&#10;Ingredients&#10;100g discard&#10;...&#10;&#10;Instructions&#10;1. Mix everything&#10;2. Bake 20 minutes"></textarea>
   <label class="fl">Recipe name</label><input class="fi" id="pasteName" placeholder="My New Recipe" />
-  <div class="btnrow"><button class="btn primary" id="parseBtn">Parse & Preview</button></div>
-  <div class="section-title">2 · Import a file</div><div class="hint">Import a recipe .json exported from this app.</div>
+  <div class="btnrow"><button class="btn primary" id="parseBtn">Parse & Preview</button><button class="btn ghost" id="aiFixBtn">Fix with AI ✨</button></div>
+  <div class="section-title">3 · Import a file</div><div class="hint">Import a recipe .json exported from this app.</div>
   <input class="fi" type="file" id="fileImp" accept="application/json,.json" />
-  <div class="section-title">3 · Build from scratch</div><div class="btnrow"><button class="btn ghost" id="blankBtn">Open blank editor</button></div>`;
+  <div class="section-title">4 · Build from scratch</div><div class="btnrow"><button class="btn ghost" id="blankBtn">Open blank editor</button></div>`;
+  document.getElementById("urlBtn").onclick=()=>importFromUrl();
   document.getElementById("parseBtn").onclick=()=>{const txt=document.getElementById("pasteBox").value.trim();const nm=document.getElementById("pasteName").value.trim();if(!txt){toast("Paste a recipe first");return}current=parseRecipe(txt,nm);go("edit",{recipe:current})};
+  document.getElementById("aiFixBtn").onclick=()=>aiFixPaste();
   document.getElementById("blankBtn").onclick=()=>{current=blankRecipe();go("edit",{recipe:current})};
   document.getElementById("fileImp").onchange=(e)=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{try{const r=JSON.parse(rd.result);r.id=uid(r.name||"imported");r.category=r.category||"Imported";saveCustomRecipe(r);toast("Imported!");go("detail",{recipe:r})}catch(err){toast("Couldn't read that file")}};rd.readAsText(f)};
+}
+async function importFromUrl(){
+  const input=document.getElementById("urlBox"),btn=document.getElementById("urlBtn");
+  const url=input.value.trim();if(!url){toast("Paste a recipe URL first");return}
+  const prevLabel=btn.textContent;btn.disabled=true;btn.textContent="Fetching…";
+  try{
+    const res=await fetch("/api/fetch-recipe",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({url})});
+    const data=await res.json().catch(()=>({}));
+    if(data.recipe){
+      const r=data.recipe;r.id=uid(r.name||"imported");r.category=r.category||"Imported";
+      saveCustomRecipe(r);toast("Imported!");go("detail",{recipe:r});return;
+    }
+    if(data.fallbackText){
+      btn.textContent="Parsing with AI…";
+      const r2=await fetch("/api/parse",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({text:data.fallbackText})});
+      const parsed=await r2.json().catch(()=>({}));
+      if(parsed&&parsed.name){
+        parsed.id=parsed.id||uid(parsed.name||"imported");parsed.category=parsed.category||"Imported";
+        saveCustomRecipe(parsed);toast("Imported!");go("detail",{recipe:parsed});return;
+      }
+      toast(parsed.error||"Couldn't parse that page — copy-paste the recipe text instead");return;
+    }
+    toast(data.hint||data.error||"Couldn't fetch that page");
+  }catch(e){
+    toast("Network error — check your connection");
+  }finally{
+    btn.disabled=false;btn.textContent=prevLabel;
+  }
+}
+async function aiFixPaste(){
+  const box=document.getElementById("pasteBox"),btn=document.getElementById("aiFixBtn");
+  const txt=box.value.trim();if(!txt){toast("Paste a recipe first");return}
+  const prevLabel=btn.textContent;btn.disabled=true;btn.textContent="Fixing with AI…";
+  try{
+    const res=await fetch("/api/parse",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({text:txt})});
+    const data=await res.json().catch(()=>({}));
+    if(data&&data.name){
+      data.id=data.id||uid(data.name||"imported");data.category=data.category||"Imported";
+      current=data;go("edit",{recipe:current});return;
+    }
+    toast(data.error||"AI couldn't parse that — using local parser instead");
+  }catch(e){
+    toast("AI import failed (offline?) — using local parser instead");
+  }finally{
+    btn.disabled=false;btn.textContent=prevLabel;
+  }
+  const nm=document.getElementById("pasteName").value.trim();current=parseRecipe(txt,nm);go("edit",{recipe:current});
 }
 function blankRecipe(){return {id:uid("recipe"),name:"",category:"Custom",emoji:"🍞",yield:"",totalTime:"",difficulty:"",summary:"",ingredients:[{item:""}],tips:[],steps:[{title:"",instruction:""}]}}
 function uid(name){return (name||"recipe").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,32)+"-"+Math.random().toString(36).slice(2,6)}
