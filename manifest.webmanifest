@@ -1,7 +1,7 @@
 {
-  "name": "Bread Making Assistant",
-  "short_name": "Bread",
-  "description": "Interactive step-by-step sourdough baking assistant with timers.",
+  "name": "Recipe Assistant",
+  "short_name": "Recipes",
+  "description": "Interactive step-by-step recipe assistant with timers — from sourdough to weeknight dinners.",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",
