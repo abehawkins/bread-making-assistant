@@ -5,9 +5,62 @@
 // reMarkable cloud via rmapi-js, into the "Recipes" folder (created if missing).
 // Requires REMARKABLE_DEVICE_TOKEN env var (one-time pairing done 2026-07-16).
 
-import "../scripts/uint8-polyfill.js"; // must precede rmapi-js (Uint8Array.toHex on Node < 24)
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
 import { remarkable, GenerationError } from "rmapi-js";
+
+// ---------------------------------------------------------------------------
+// Polyfills for the ES "Uint8Array to/from base64 and hex" proposal methods,
+// which rmapi-js v11 calls at request time but Node < 24 doesn't ship.
+// Inlined (not a separate module) so nothing can go missing in bundling;
+// running after imports is fine — rmapi-js only calls these inside functions.
+// ---------------------------------------------------------------------------
+try {
+  if (typeof Uint8Array.prototype.toHex !== "function") {
+    Object.defineProperty(Uint8Array.prototype, "toHex", {
+      value: function toHex() {
+        let out = "";
+        for (let i = 0; i < this.length; i++) out += this[i].toString(16).padStart(2, "0");
+        return out;
+      },
+      writable: true, configurable: true,
+    });
+  }
+  if (typeof Uint8Array.fromHex !== "function") {
+    Object.defineProperty(Uint8Array, "fromHex", {
+      value: function fromHex(hex) {
+        if (typeof hex !== "string" || hex.length % 2 !== 0 || /[^0-9a-fA-F]/.test(hex)) {
+          throw new SyntaxError("Invalid hex string");
+        }
+        const out = new Uint8Array(hex.length / 2);
+        for (let i = 0; i < out.length; i++) out[i] = parseInt(hex.slice(i * 2, i * 2 + 2), 16);
+        return out;
+      },
+      writable: true, configurable: true,
+    });
+  }
+  if (typeof Uint8Array.prototype.toBase64 !== "function") {
+    Object.defineProperty(Uint8Array.prototype, "toBase64", {
+      value: function toBase64(opts) {
+        const alphabet = opts && opts.alphabet === "base64url" ? "base64url" : "base64";
+        let b64 = Buffer.from(this.buffer, this.byteOffset, this.byteLength).toString(alphabet);
+        if (opts && opts.omitPadding) b64 = b64.replace(/=+$/, "");
+        return b64;
+      },
+      writable: true, configurable: true,
+    });
+  }
+  if (typeof Uint8Array.fromBase64 !== "function") {
+    Object.defineProperty(Uint8Array, "fromBase64", {
+      value: function fromBase64(str, opts) {
+        const alphabet = opts && opts.alphabet === "base64url" ? "base64url" : "base64";
+        return new Uint8Array(Buffer.from(str, alphabet));
+      },
+      writable: true, configurable: true,
+    });
+  }
+} catch (e) {
+  console.error("Uint8Array polyfill setup failed (continuing):", e);
+}
 
 // ---------------------------------------------------------------------------
 // Page geometry — mirrors make_kitchen_pdfs.py (reMarkable 2 ~3:4 portrait)
@@ -240,64 +293,3 @@ async function uploadToRemarkable(token, docName, pdfBytes) {
   let parent = "";
   let entries = [];
   try { entries = await api.listItems(); } catch { entries = []; }
-  const folder = entries.find(
-    (e) => e.type === "CollectionType" &&
-      (e.visibleName || "").toLowerCase() === "recipes" &&
-      (!e.parent || e.parent === "")
-  );
-  if (folder) parent = folder.id;
-  else {
-    try { parent = (await api.putFolder("Recipes")).id; } catch { parent = ""; }
-  }
-
-  // Replace an existing doc of the same name in that folder (no duplicates)
-  const existing = entries.filter(
-    (e) => e.type === "DocumentType" &&
-      e.visibleName === docName && (e.parent || "") === parent
-  );
-  for (const e of existing) {
-    try { await api.delete(e.hash); } catch { /* non-fatal */ }
-  }
-
-  // putPdf can race on the server generation — retry a few times, then fall
-  // back to the simple root upload so the recipe still arrives.
-  let lastErr = null;
-  for (let attempt = 0; attempt < 3; attempt++) {
-    try {
-      return await api.putPdf(docName, pdfBytes, { parent });
-    } catch (e) {
-      lastErr = e;
-      if (!(e instanceof GenerationError)) break;
-    }
-  }
-  try {
-    return await api.uploadPdf(docName, pdfBytes); // root, but it arrives
-  } catch (e) {
-    throw lastErr || e;
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Handler
-// ---------------------------------------------------------------------------
-export default async function handler(req, res) {
-  if (req.method !== "POST") return res.status(405).json({ error: "Use POST" });
-  const token = process.env.REMARKABLE_DEVICE_TOKEN;
-  if (!token)
-    return res.status(501).json({ error: "Not configured: add REMARKABLE_DEVICE_TOKEN in Vercel settings." });
-
-  const { recipe } = req.body || {};
-  if (!recipe || !recipe.name)
-    return res.status(400).json({ error: "POST { recipe } using the app's recipe JSON." });
-
-  try {
-    const pdfBytes = await renderKitchenPdf(recipe);
-    const docName = sanitize(recipe.name);
-    await uploadToRemarkable(token, docName, new Uint8Array(pdfBytes));
-    return res.status(200).json({
-      status: "success",
-      message: `"${docName}" sent — it'll appear on the tablet when it syncs.`,
-    });
-  } catch (e) {
-    console.error("send-to-tablet failed:", e);
-    return res.status(502).j
