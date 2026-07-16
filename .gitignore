@@ -6,3 +6,4 @@ __pycache__/
 kitchen-pdfs/
 raw_handwritten_notes/
 converted_notes/
+_to_delete/
