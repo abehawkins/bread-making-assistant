@@ -1,0 +1,13 @@
+{
+  "name": "recipe-assistant",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "node scripts/patch-rmapi.mjs"
+  },
+  "dependencies": {
+    "crc-32": "^1.2.2",
+    "pdf-lib": "^1.17.1",
+    "rmapi-js": "^11.0.0"
+  }
+}

@@ -102,22 +102,22 @@ function renderDetail(){
   document.getElementById("custBtn").onclick=()=>go("edit");
   document.getElementById("sendTabBtn").onclick=async()=>{
     toast("Sending to tablet...");
+    // 1) Cloud route (Vercel): server renders the kitchen PDF and uploads it
+    //    via the reMarkable cloud — works from anywhere, no home bridge needed.
+    try{
+      const res=await fetch("/api/send-to-tablet",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({recipe:r})});
+      if(res.ok){const data=await res.json();toast(data.message||"Sent! It'll appear when the tablet syncs.");return}
+      if(res.status!==404)console.warn("Cloud send failed:",await res.text().catch(()=>""));
+    }catch(e){console.warn("Cloud send error:",e)}
+    // 2) Local bridge route (run_local_server.py on the home network)
     try{
       const res=await fetch("/api/send?recipeId="+encodeURIComponent(r.id),{method:"POST"});
-      if(res.ok){
-        const data=await res.json();
-        toast(data.message||"Sent to tablet!");
-      }else{
-        const txt=await res.text();
-        console.warn("Upload failed, opening print:",txt);
-        toast("Opening print dialog...");
-        printRecipe(r);
-      }
-    }catch(e){
-      console.warn("Upload error, opening print:",e);
-      toast("Opening print dialog...");
-      printRecipe(r);
-    }
+      if(res.ok){const data=await res.json();toast(data.message||"Sent to tablet!");return}
+      console.warn("Local bridge failed:",await res.text().catch(()=>""));
+    }catch(e){console.warn("Local bridge error:",e)}
+    // 3) Fallback: print-optimized view
+    toast("Opening print dialog...");
+    printRecipe(r);
   };
   document.getElementById("shareBtn").onclick=()=>exportRecipe(r);
   const del=document.getElementById("delBtn");if(del)del.onclick=()=>{if(confirm("Delete "+r.name+"?")){setCustom(getCustom().filter(x=>x.id!==r.id));supaDelete(r.id);toast("Deleted");go("home")}};

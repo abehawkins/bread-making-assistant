@@ -23,6 +23,35 @@ Timers are wall-clock based: if the screen locks or you switch apps, reopening t
 1. In Vercel → Project → Settings → Environment Variables, add `ANTHROPIC_API_KEY`.
 2. The importer can POST `{text}` or `{imageBase64}` to `/api/parse` and receive a ready recipe.
 
+## ☁️ Direct cloud send (2026-07-16) — "Send to tablet" from anywhere
+
+The **Send to tablet** button now works straight from the Vercel app, with no
+home bridge server involved:
+
+1. `api/send-to-tablet.js` receives the recipe JSON, renders the same
+   e-ink-optimized kitchen PDF as `make_kitchen_pdfs.py` (ported to `pdf-lib`),
+   and uploads it via the reMarkable cloud API using
+   [`rmapi-js`](https://github.com/erikbrinkman/rmapi-js).
+2. The tablet syncs it down (into the **Recipes** folder, created if missing;
+   same-name documents are replaced, not duplicated) next time it's awake on
+   WiFi.
+
+Setup (already done): tablet signed into a free reMarkable account; a device
+token was created via the one-time code at
+`https://my.remarkable.com/device/desktop/connect` and stored as the
+`REMARKABLE_DEVICE_TOKEN` environment variable in Vercel.
+
+Button fallback order: cloud send → local bridge (`/api/send`, when the app is
+served by `run_local_server.py`) → print dialog.
+
+Notes:
+- `scripts/patch-rmapi.mjs` (postinstall) fixes a broken ESM import path in
+  rmapi-js's published build (`crc-32/crc32c` → `crc-32/crc32c.js`).
+- The cloud API is community-maintained (unofficial). If reMarkable changes it,
+  bump `rmapi-js` — or fall back to the local bridge below, which keeps working.
+- Re-pairing (new token): get a new code from the connect page, run
+  `register(code)` from rmapi-js once, update the env var.
+
 ## reMarkable 2 Integration (Wireless Sync & Notes Backup)
 We have added fully integrated uploader tools and backup utilities for the reMarkable 2 e-ink tablet.
 
