@@ -120,19 +120,29 @@ class RecipeAppHandler(http.server.SimpleHTTPRequestHandler):
 def run():
     # Use ThreadingTCPServer to handle concurrent requests (e.g. static assets + API calls)
     socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.ThreadingTCPServer(("", PORT), RecipeAppHandler) as httpd:
-        local_ip = get_local_ip()
-        print("==================================================")
-        print("Recipe Assistant Local Server Started!")
-        print("==================================================")
-        print(f" PC Browser URL:   http://localhost:{PORT}")
-        print(f" Mobile/Phone URL:  http://{local_ip}:{PORT}")
-        print("--------------------------------------------------")
-        print("Press Ctrl+C to stop.")
+    port = PORT
+    while True:
         try:
-            httpd.serve_forever()
-        except KeyboardInterrupt:
-            print("\nShutting down server...")
+            with socketserver.ThreadingTCPServer(("", port), RecipeAppHandler) as httpd:
+                local_ip = get_local_ip()
+                print("==================================================")
+                print("Recipe Assistant Local Server Started!")
+                print("==================================================")
+                print(f" PC Browser URL:   http://localhost:{port}")
+                print(f" Mobile/Phone URL:  http://{local_ip}:{port}")
+                print("--------------------------------------------------")
+                print("Press Ctrl+C to stop.")
+                try:
+                    httpd.serve_forever()
+                except KeyboardInterrupt:
+                    print("\nShutting down server...")
+            break
+        except OSError as e:
+            if e.errno in (98, 10048):  # 98 is Linux 'Address already in use', 10048 is Windows
+                print(f"Port {port} is in use. Trying port {port + 1}...")
+                port += 1
+            else:
+                raise e
 
 if __name__ == "__main__":
     run()
