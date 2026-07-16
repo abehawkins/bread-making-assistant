@@ -93,13 +93,32 @@ function renderDetail(){
   const nT=(r.steps||[]).filter(s=>s.timer).length;
   let html=`<div class="hero"><div class="emoji">${r.emoji||"🍞"}</div><h2>${esc(r.name)}</h2><div class="summary">${esc(r.summary||"")}</div><div class="chips"><span class="chip">⏱ ${esc(r.totalTime||"—")}</span><span class="chip">📋 ${(r.steps||[]).length} steps</span>${r.yield?`<span class="chip">🍽 ${esc(r.yield)}</span>`:""}${r.difficulty?`<span class="chip">📈 ${esc(r.difficulty)}</span>`:""}${nT?`<span class="chip">⏲ ${nT} timers</span>`:""}</div></div>
   <button class="btn primary" id="startBtn">▶ Start</button>
-  <div class="btnrow"><button class="btn ghost" id="custBtn">✏️ Customize</button><button class="btn ghost" id="shareBtn">⬆️ Export</button></div>
+  <div class="btnrow"><button class="btn ghost" id="custBtn">✏️ Customize</button><button class="btn ghost" id="sendTabBtn">📱 Send to tablet</button><button class="btn ghost" id="shareBtn">⬆️ Export</button></div>
   <div class="section-title">Ingredients</div><div class="ingredients">${renderIngredientsList(r.ingredients)}</div>`;
   if(r.tips&&r.tips.length){html+=`<div class="section-title">Tips</div><div class="tips-box">`;r.tips.forEach(t=>html+=`<div class="t">${esc(t)}</div>`);html+=`</div>`}
   if(getCustom().some(x=>x.id===r.id))html+=`<button class="btn ghost" id="delBtn" style="margin-top:14px;color:#c0392b">🗑 Delete this recipe</button>`;
   appEl.innerHTML=html;
   document.getElementById("startBtn").onclick=()=>startRun(r);
   document.getElementById("custBtn").onclick=()=>go("edit");
+  document.getElementById("sendTabBtn").onclick=async()=>{
+    toast("Sending to tablet...");
+    try{
+      const res=await fetch("/api/send?recipeId="+encodeURIComponent(r.id),{method:"POST"});
+      if(res.ok){
+        const data=await res.json();
+        toast(data.message||"Sent to tablet!");
+      }else{
+        const txt=await res.text();
+        console.warn("Upload failed, opening print:",txt);
+        toast("Opening print dialog...");
+        printRecipe(r);
+      }
+    }catch(e){
+      console.warn("Upload error, opening print:",e);
+      toast("Opening print dialog...");
+      printRecipe(r);
+    }
+  };
   document.getElementById("shareBtn").onclick=()=>exportRecipe(r);
   const del=document.getElementById("delBtn");if(del)del.onclick=()=>{if(confirm("Delete "+r.name+"?")){setCustom(getCustom().filter(x=>x.id!==r.id));supaDelete(r.id);toast("Deleted");go("home")}};
 }
@@ -190,6 +209,77 @@ function beep(){if(!audioCtx)return;let t=audioCtx.currentTime;for(let k=0;k<4;k
 let wakeLock=null;
 async function requestWakeLock(){try{if("wakeLock"in navigator)wakeLock=await navigator.wakeLock.request("screen")}catch(e){}}
 function releaseWakeLock(){try{if(wakeLock){wakeLock.release();wakeLock=null}}catch(e){}}
+function printRecipe(r) {
+  let printDiv = document.getElementById("print-section");
+  if (!printDiv) {
+    printDiv = document.createElement("div");
+    printDiv.id = "print-section";
+    document.body.appendChild(printDiv);
+  }
+  const name = r.name || "Untitled Recipe";
+  const yield_ = r.yield || "";
+  const total_time = r.totalTime || "";
+  const difficulty = r.difficulty || "";
+  const summary = r.summary || "";
+  const ingredients = r.ingredients || [];
+  const steps = r.steps || [];
+  const tips = r.tips || [];
+  let html = `<div class="print-container"><div class="print-header-row"><div class="print-header-left"><h1 class="print-title">${esc(name)}</h1><div class="print-meta">${esc([yield_, total_time, difficulty].filter(Boolean).join("  •  "))}</div>${summary ? `<div class="print-summary">${esc(summary)}</div>` : ""}${tips && tips.length ? `<h2 class="print-section-title">General Tips</h2><ul class="print-tips-list" style="margin-top:5px; padding-left:15px;">${tips.map(t => `<li>• ${esc(t)}</li>`).join("")}</ul>` : ""}</div><div class="print-header-right"><h2 class="print-section-title" style="margin-top:0">Ingredients</h2><div class="print-ingredients">`;
+  if (ingredients.length) {
+    const grouped = ingredients.some(i => i.group);
+    if (grouped) {
+      let lastGroup = null;
+      html += "<ul>";
+      ingredients.forEach(i => {
+        const grp = i.group || "Other";
+        if (grp !== lastGroup) {
+          if (lastGroup !== null) html += "</ul>";
+          html += `<div class="print-ig-group">${esc(grp)}</div><ul>`;
+          lastGroup = grp;
+        }
+        html += `<li>• ${esc(i.item)}${i.note ? ` <span class="small">(${esc(i.note)})</span>` : ""}</li>`;
+      });
+      html += "</ul>";
+    } else {
+      html += "<ul>";
+      ingredients.forEach(i => {
+        html += `<li>• ${esc(i.item)}${i.note ? ` <span class="small">(${esc(i.note)})</span>` : ""}</li>`;
+      });
+      html += "</ul>";
+    }
+  } else {
+    html += `<div class="small">No ingredients listed.</div>`;
+  }
+  html += `</div></div></div><hr class="print-divider" /><div class="print-steps-section"><h2 class="print-section-title" style="margin-top:0">Instructions</h2>`;
+  const totalSteps = steps.length;
+  steps.forEach((s, idx) => {
+    let headerText = `Step ${idx + 1} of ${totalSteps}`;
+    if (s.title && s.title.trim()) {
+      headerText += `  —  ${s.title.trim()}`;
+    }
+    let timerLine = "";
+    if (s.timer) {
+      const label = s.timer.label || "Timer";
+      const rangeText = s.timer.rangeText || "";
+      if (rangeText && label) {
+        timerLine = `TIMER: ${rangeText} -- ${label}`;
+      } else if (rangeText) {
+        timerLine = `TIMER: ${rangeText}`;
+      } else if (s.timer.seconds) {
+        timerLine = `TIMER: ${Math.round(s.timer.seconds / 60)} min`;
+      }
+    }
+    html += `<div class="print-step"><div class="print-step-header">${esc(headerText)}</div><div class="print-step-body">${esc(s.instruction || "")}</div>${timerLine ? `<div class="print-timer">${esc(timerLine)}</div>` : ""}${s.tip ? `<div class="print-step-tip">${esc(s.tip)}</div>` : ""}</div>`;
+  });
+  html += `</div></div>`;
+  printDiv.innerHTML = html;
+  const isTest = navigator.webdriver || new URLSearchParams(window.location.search).has("test");
+  if (!isTest) {
+    window.print();
+  } else {
+    console.log("Mocked print: window.print() skipped in test/automation environment.");
+  }
+}
 function exportRecipe(r){
   const blob=new Blob([JSON.stringify(r,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);
   const a=document.createElement("a");a.href=url;a.download=(r.id||"recipe")+".json";a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);

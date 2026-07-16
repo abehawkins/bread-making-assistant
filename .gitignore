@@ -1,0 +1,8 @@
+node_modules
+.vercel
+.DS_Store
+remarkable_config.json
+__pycache__/
+kitchen-pdfs/
+raw_handwritten_notes/
+converted_notes/

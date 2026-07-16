@@ -1,0 +1,1566 @@
+{
+  "schemaVersion": 1,
+  "source": "GIYUDOT — The Guide to Sourdough Bread & Recipes",
+  "recipes": [
+    {
+      "id": "sourdough-starter",
+      "name": "Make a Sourdough Starter",
+      "category": "Starter",
+      "emoji": "🫙",
+      "yield": "1 active starter",
+      "totalTime": "7+ days",
+      "difficulty": "Beginner",
+      "summary": "Build a wild-yeast starter from scratch over about a week using a 1:1:1 feeding ratio.",
+      "ingredients": [
+        {
+          "item": "Unbleached all-purpose or whole wheat flour"
+        },
+        {
+          "item": "Lukewarm filtered water"
+        },
+        {
+          "item": "A clean glass or plastic container"
+        },
+        {
+          "item": "Digital kitchen scale"
+        },
+        {
+          "item": "Spoon or spatula"
+        }
+      ],
+      "tips": [
+        "Always feed by weight using a 1:1:1 ratio (equal parts starter, flour, water).",
+        "For minimal waste, you can feed with 60g flour + 60g water per feeding.",
+        "Keep at room temperature (68–70°F / 20–21°C). If your home is cold, place it in the (turned-off) oven with the light on, or a proofing box.",
+        "Don't worry if activity slows around Day 4–5 — that's normal.",
+        "An established starter can be maintained by feeding regularly. Always discard about half before feeding to prevent overflow and keep the ratio balanced."
+      ],
+      "steps": [
+        {
+          "title": "Day 1 — Mix Flour and Water",
+          "instruction": "Mix 60g (½ cup) unbleached all-purpose or whole wheat flour with 60g (¼ cup) lukewarm water in your container until it looks like a thick batter. Cover loosely and set at room temperature (68–70°F) for 24 hours.",
+          "tip": "If your home is cold, place it in the GIYUDOT bread proofing box or a warm spot."
+        },
+        {
+          "title": "Day 2 — First Feeding",
+          "instruction": "You may or may not see bubbles yet. Discard half of the mixture (keep 60g), then feed with 60g all-purpose flour and 60g water. Stir, cover loosely, and rest 24 hours."
+        },
+        {
+          "title": "Days 3–6 — Daily Feeding",
+          "instruction": "Feed once per day: discard back to 60g and add 60g flour + 60g water. By Day 3 or 4 you should see small bubbles, a rise, and a fruity smell. If activity slows down around Day 4–5, that's normal — keep going.",
+          "tip": "Don't worry if your starter progresses slower or faster than expected. The most reliable signs of health are a bubbly texture and a pleasantly tangy, slightly yeasty aroma."
+        },
+        {
+          "title": "Day 7 and Onward — Ready to Bake",
+          "instruction": "When your starter reliably doubles in size within 4–6 hours of feeding, smells pleasantly tangy, and has lots of bubbles, it's ready for baking. If needed, switch to whole wheat or rye flour for a few feedings to boost activity. Your starter is now established and can be used to make delicious sourdough bread.",
+          "tip": "To maintain: feed regularly. If you don't bake often, store in the fridge and feed once a week. Always discard about half before feeding."
+        }
+      ]
+    },
+    {
+      "id": "feeding-caring-starter",
+      "name": "Feeding & Caring for Your Starter",
+      "category": "Starter",
+      "emoji": "🥣",
+      "yield": "Maintained starter",
+      "totalTime": "Ongoing",
+      "difficulty": "Beginner",
+      "summary": "How to keep an established starter healthy day-to-day and in the fridge.",
+      "ingredients": [
+        {
+          "item": "Established sourdough starter"
+        },
+        {
+          "item": "Flour (all-purpose, whole wheat, or rye)"
+        },
+        {
+          "item": "Lukewarm water"
+        }
+      ],
+      "tips": [
+        "The float test isn't always reliable. If your starter is active and ready to use, it's normal for it to fail before using it — any time after its peak is fine.",
+        "Hooch (a gray or brown liquid forming on top) means it has started producing alcohol. Pour it off or stir it in (stirring adds sour flavor) before using.",
+        "Over time, you can adjust the size and flour type of your starter. Increase or decrease flour and water based on your needs."
+      ],
+      "steps": [
+        {
+          "title": "Daily Room-Temperature Feeding",
+          "instruction": "Keep your starter on the counter and feed it daily for up to two weeks. A consistently fed starter doubles after each feeding, is active and ready to use, and helps build strength after activation.",
+          "tip": "It's normal for the starter to rise and fall — use it any time after its peak. The longer past peak, the tangier the flavor."
+        },
+        {
+          "title": "Refrigerator Storage",
+          "instruction": "If storing in the fridge, feed your starter once per week or at least every 4–12 hours before baking (whichever comes first). Take it out, feed it, and let it build activation before mixing your dough.",
+          "tip": "Many people leave the starter in the fridge unfed for longer periods — this is acceptable as long as there is no mold. It may need several feedings to re-activate."
+        },
+        {
+          "title": "Using Cold Starter",
+          "instruction": "You don't always need to bring your starter to room temperature before using it. You can use it straight from the fridge in a mix, then place it back in the fridge without feeding again.",
+          "tip": "If you bake every 3–4 days or less, you can feed your starter after mixing a recipe, allow it to peak, refrigerate it, and use it straight from the fridge next time."
+        },
+        {
+          "title": "Adjusting Consistency",
+          "instruction": "If a recipe calls for a specific amount of active starter, divide that number by two and feed equal amounts of flour and water to reach the quantity needed.",
+          "tip": "If your starter feels very thick after feeding and watery 24 hours later, that's a sign it's actively fermenting. Adjust thickness by slightly changing the flour ratio."
+        }
+      ]
+    },
+    {
+      "id": "beginner-bread",
+      "name": "Beginner Bread",
+      "category": "Bread",
+      "emoji": "🍞",
+      "yield": "1 loaf",
+      "totalTime": "About 24 hours (incl. proof)",
+      "difficulty": "Beginner",
+      "summary": "A forgiving first sourdough loaf with overnight proof and a Dutch-oven bake.",
+      "ingredients": [
+        {
+          "item": "100g active sourdough starter"
+        },
+        {
+          "item": "400g bread flour (or all-purpose)"
+        },
+        {
+          "item": "280g lukewarm water"
+        },
+        {
+          "item": "8g fine sea salt"
+        }
+      ],
+      "tips": [
+        "If your dough is ready for shaping when it's puffy and slightly jiggly, not sticky and collapsing.",
+        "If you're short on time, skip the overnight proof and bake after the 1–2 hour second rise.",
+        "Don't skip the cooling! Cutting too soon will ruin the crumb texture.",
+        "Want a softer crust? Wrap the warm bread in a kitchen towel after cooling 15 minutes."
+      ],
+      "steps": [
+        {
+          "title": "Mix the Dough",
+          "instruction": "In a large bowl, mix the starter and water until mostly dissolved. Add flour and stir until a shaggy dough forms. Cover and let rest (autolyse) for 30–45 minutes.",
+          "timer": {
+            "seconds": 1800,
+            "label": "Autolyse rest",
+            "rangeText": "30–45 minutes"
+          }
+        },
+        {
+          "title": "Add Salt",
+          "instruction": "Sprinkle salt over the dough and incorporate by hand, folding and gently pressing until fully combined."
+        },
+        {
+          "title": "Stretch & Folds",
+          "instruction": "During roughly the first 2 hours, perform 2–3 rounds of stretch and folds — one set every 30–45 minutes — to build strength. The timer counts each interval; reset it after every fold.",
+          "timer": {
+            "seconds": 1800,
+            "label": "Until next fold",
+            "rangeText": "every 30–45 min · 2–3 sets"
+          },
+          "tip": "A set is a few folds around the bowl; the dough gets smoother and stronger each time."
+        },
+        {
+          "title": "Bulk Fermentation",
+          "instruction": "After your folds, let the dough continue at room temperature until it looks puffy and has risen by about half. Counting from mixing, that is roughly 4–6 hours total.",
+          "timer": {
+            "seconds": 7200,
+            "label": "Bulk fermentation",
+            "rangeText": "about 2–4 h more · 4–6 h total"
+          }
+        },
+        {
+          "title": "Pre-shape",
+          "instruction": "Turn the dough out onto a lightly floured surface. Gently shape it into a round and let it rest, uncovered, for 20–30 minutes.",
+          "timer": {
+            "seconds": 1200,
+            "label": "Bench rest",
+            "rangeText": "20–30 minutes"
+          }
+        },
+        {
+          "title": "Final Shaping",
+          "instruction": "Reshape the dough into a tight ball or oval. Place it seam-side up in a floured proofing basket or bowl lined with a floured cloth.",
+          "tip": "The dough is ready for shaping when it's puffy and slightly jiggly, not sticky."
+        },
+        {
+          "title": "Final Proof",
+          "instruction": "Cover and let rise at room temperature for 1–2 hours, or refrigerate overnight (8–12 hours) for improved flavor and structure.",
+          "timer": {
+            "seconds": 3600,
+            "label": "Final proof (room temp)",
+            "rangeText": "1–2 hours, or 8–12 hours in fridge"
+          },
+          "tip": "Short on time? The room-temp proof is fine. For best flavor, use the overnight fridge proof."
+        },
+        {
+          "title": "Preheat Oven",
+          "instruction": "Place a Dutch oven in your oven and preheat to 475°F (245°C) for at least 30 minutes before baking.",
+          "timer": {
+            "seconds": 1800,
+            "label": "Preheat",
+            "rangeText": "at least 30 minutes"
+          }
+        },
+        {
+          "title": "Score and Bake",
+          "instruction": "Invert the dough onto parchment, score the top with a sharp blade, and carefully transfer it to the hot Dutch oven. Bake covered for 20–25 minutes, then remove the lid and bake 20–25 minutes uncovered, until deep golden brown.",
+          "timer": {
+            "seconds": 1320,
+            "label": "Bake covered",
+            "rangeText": "20–25 minutes"
+          }
+        },
+        {
+          "title": "Bake Uncovered",
+          "instruction": "Remove the lid and continue baking uncovered for 20–25 minutes until deep golden brown.",
+          "timer": {
+            "seconds": 1320,
+            "label": "Bake uncovered",
+            "rangeText": "20–25 minutes"
+          }
+        },
+        {
+          "title": "Cool",
+          "instruction": "Transfer the baked loaf to a wire rack and cool at least 1 hour before slicing.",
+          "timer": {
+            "seconds": 3600,
+            "label": "Cool",
+            "rangeText": "at least 1 hour"
+          },
+          "tip": "Don't skip cooling — cutting too soon ruins the crumb. For a softer crust, wrap the warm loaf in a towel after 15 minutes."
+        }
+      ]
+    },
+    {
+      "id": "rye-sourdough",
+      "name": "Rye Sourdough Bread",
+      "category": "Bread",
+      "emoji": "🍞",
+      "yield": "1 loaf",
+      "totalTime": "About 24 hours (incl. proof)",
+      "difficulty": "Intermediate",
+      "summary": "A hearty rye loaf with a dense, rustic crumb and tangy flavor.",
+      "ingredients": [
+        {
+          "item": "120g active sourdough starter"
+        },
+        {
+          "item": "180g whole rye flour"
+        },
+        {
+          "item": "240g bread flour (or all-purpose)"
+        },
+        {
+          "item": "300–320g lukewarm water"
+        },
+        {
+          "item": "9g fine sea salt"
+        }
+      ],
+      "tips": [
+        "Rye flour absorbs more water and ferments faster than wheat flour. Watch for signs of over-proofing.",
+        "The dough will be stickier and less elastic than wheat dough — don't overwork it; gentle handling is best.",
+        "For a more rustic texture, add caraway seeds (1–2 teaspoons) to the dough, or sprinkle on top before baking.",
+        "Pairs beautifully with butter, sharp cheese, or smoked salmon."
+      ],
+      "steps": [
+        {
+          "title": "Mix the Dough",
+          "instruction": "In a large bowl, combine the starter and water. Stir in both rye and bread flour until no dry spots remain. The dough will be sticky and shaggy. Cover and rest (autolyse) for 30–45 minutes.",
+          "timer": {
+            "seconds": 1800,
+            "label": "Autolyse rest",
+            "rangeText": "30–45 minutes"
+          }
+        },
+        {
+          "title": "Add Salt",
+          "instruction": "Sprinkle the salt over the dough and incorporate it by gently folding and pressing until evenly mixed. Let rest for 15 minutes.",
+          "timer": {
+            "seconds": 900,
+            "label": "Rest",
+            "rangeText": "15 minutes"
+          }
+        },
+        {
+          "title": "Stretch & Folds",
+          "instruction": "During roughly the first 1.5 hours, perform 2–3 sets of stretch and folds — one set every 30–45 minutes — to build strength. Reset the timer after each fold.",
+          "timer": {
+            "seconds": 1800,
+            "label": "Until next fold",
+            "rangeText": "every 30–45 min · 2–3 sets"
+          },
+          "tip": "Rye dough is stickier and won't get as elastic as wheat — handle it gently."
+        },
+        {
+          "title": "Bulk Fermentation",
+          "instruction": "After your folds, let the dough continue at room temperature until puffy and risen by about half — roughly 4–5 hours total from mixing. It won't become as elastic as wheat; this is normal for rye.",
+          "timer": {
+            "seconds": 9000,
+            "label": "Bulk fermentation",
+            "rangeText": "about 2.5–3.5 h more · 4–5 h total"
+          },
+          "tip": "Rye ferments faster — watch closely for over-proofing."
+        },
+        {
+          "title": "Pre-shape and Rest",
+          "instruction": "Turn the dough onto a lightly floured surface and gently shape into a round. Rest uncovered for 20–30 minutes.",
+          "timer": {
+            "seconds": 1200,
+            "label": "Bench rest",
+            "rangeText": "20–30 minutes"
+          }
+        },
+        {
+          "title": "Final Shape",
+          "instruction": "Tighten the dough into a smooth round or oval and place seam-side up in a floured proofing basket or a bowl lined with a floured cloth."
+        },
+        {
+          "title": "Final Proof",
+          "instruction": "Cover and let rise for 1–2 hours at room temperature, or refrigerate for 8–12 hours for enhanced flavor.",
+          "timer": {
+            "seconds": 3600,
+            "label": "Final proof (room temp)",
+            "rangeText": "1–2 hours, or 8–12 hours in fridge"
+          }
+        },
+        {
+          "title": "Preheat & Bake",
+          "instruction": "Preheat the oven to 475°F (245°C) with a Dutch oven inside for at least 30 minutes. Carefully invert the dough onto parchment, score the top, and place it into the hot pot. Bake covered for 25 minutes, then uncover and bake another 20–25 minutes until dark brown.",
+          "timer": {
+            "seconds": 1500,
+            "label": "Bake covered",
+            "rangeText": "25 minutes"
+          }
+        },
+        {
+          "title": "Bake Uncovered",
+          "instruction": "Remove the lid and bake another 20–25 minutes until dark brown.",
+          "timer": {
+            "seconds": 1320,
+            "label": "Bake uncovered",
+            "rangeText": "20–25 minutes"
+          }
+        },
+        {
+          "title": "Cool",
+          "instruction": "Cool completely on a wire rack for at least 1 hour before slicing. The crumb will continue to set as it cools.",
+          "timer": {
+            "seconds": 3600,
+            "label": "Cool",
+            "rangeText": "at least 1 hour"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cinnamon-raisin",
+      "name": "Cinnamon Raisin Bread",
+      "category": "Bread",
+      "emoji": "🍞",
+      "yield": "1 loaf",
+      "totalTime": "About 24 hours (incl. proof)",
+      "difficulty": "Intermediate",
+      "summary": "A lightly sweet sourdough studded with raisins and a cinnamon swirl.",
+      "ingredients": [
+        {
+          "item": "120g active sourdough starter"
+        },
+        {
+          "item": "400g bread flour (or all-purpose)"
+        },
+        {
+          "item": "280g lukewarm water"
+        },
+        {
+          "item": "75g raisins (soaked and patted dry)"
+        },
+        {
+          "item": "30g granulated sugar"
+        },
+        {
+          "item": "1½ teaspoons ground cinnamon"
+        }
+      ],
+      "tips": [
+        "Add a handful of chopped walnuts or pecans for extra texture and flavor.",
+        "For a softer, more enriched dough, you can add 10–20g honey or a splash of milk (reduce water slightly).",
+        "Cinnamon slows fermentation — do not mix it into the dough too early. Keep it in the swirl or mix with sugar and add toward the end of bulk.",
+        "Pairs perfectly with butter, cream cheese, or toasted with a drizzle of maple syrup."
+      ],
+      "steps": [
+        {
+          "title": "Soak Raisins",
+          "instruction": "Soak the raisins in warm water for 15–20 minutes, then drain and pat dry. This prevents them from drawing moisture from the dough.",
+          "timer": {
+            "seconds": 900,
+            "label": "Soak raisins",
+            "rangeText": "15–20 minutes"
+          }
+        },
+        {
+          "title": "Mix the Dough",
+          "instruction": "In a large bowl, mix the starter and water until dissolved. Add flour and mix until a shaggy dough forms. Cover and let rest for 30–45 minutes.",
+          "timer": {
+            "seconds": 1800,
+            "label": "Autolyse rest",
+            "rangeText": "30–45 minutes"
+          }
+        },
+        {
+          "title": "Add Salt",
+          "instruction": "Sprinkle salt over the dough and incorporate by gently folding and pressing."
+        },
+        {
+          "title": "Stretch & Folds",
+          "instruction": "During roughly the first 2 hours, perform 2–3 sets of stretch and folds — one set every 30–45 minutes. On the final fold, gently add the soaked raisins to distribute them evenly. Reset the timer after each fold.",
+          "timer": {
+            "seconds": 1800,
+            "label": "Until next fold",
+            "rangeText": "every 30–45 min · 2–3 sets"
+          },
+          "tip": "Add the soaked raisins on the final fold so they distribute evenly."
+        },
+        {
+          "title": "Bulk Fermentation",
+          "instruction": "After your folds, let the dough continue at room temperature until puffy and risen by about half — roughly 4–5 hours total from mixing.",
+          "timer": {
+            "seconds": 7200,
+            "label": "Bulk fermentation",
+            "rangeText": "about 2–3 h more · 4–5 h total"
+          }
+        },
+        {
+          "title": "Optional Swirl",
+          "instruction": "For a cinnamon swirl: after bulk fermentation, roll the dough into a rectangle. Sprinkle the cinnamon-sugar over the surface, then roll up like a log and shape into a round.",
+          "tip": "Keep cinnamon in the swirl rather than the dough — it slows fermentation."
+        },
+        {
+          "title": "Final Proof",
+          "instruction": "Place the shaped dough seam-side up into a floured proofing basket or cloth-lined bowl. Cover and proof at room temperature for 1–2 hours, or refrigerate overnight for 8–12 hours.",
+          "timer": {
+            "seconds": 3600,
+            "label": "Final proof (room temp)",
+            "rangeText": "1–2 hours, or 8–12 hours in fridge"
+          }
+        },
+        {
+          "title": "Preheat & Bake",
+          "instruction": "Preheat oven to 475°F (245°C) with a Dutch oven inside for 30 minutes. Invert the dough onto parchment, score the top, and transfer to the hot pot. Bake covered for 25 minutes, then uncover and bake another 20–25 minutes until golden brown.",
+          "timer": {
+            "seconds": 1500,
+            "label": "Bake covered",
+            "rangeText": "25 minutes"
+          }
+        },
+        {
+          "title": "Bake Uncovered",
+          "instruction": "Remove the lid and bake another 20–25 minutes until golden brown.",
+          "timer": {
+            "seconds": 1320,
+            "label": "Bake uncovered",
+            "rangeText": "20–25 minutes"
+          }
+        },
+        {
+          "title": "Cool",
+          "instruction": "Let cool completely on a wire rack for at least 1 hour before slicing to allow the crumb to set.",
+          "timer": {
+            "seconds": 3600,
+            "label": "Cool",
+            "rangeText": "at least 1 hour"
+          }
+        }
+      ]
+    },
+    {
+      "id": "jalapeno-cheese",
+      "name": "Jalapeño Cheddar Sourdough Bread",
+      "category": "Bread",
+      "emoji": "🌶️",
+      "yield": "1 loaf",
+      "totalTime": "About 24 hours (incl. proof)",
+      "difficulty": "Intermediate",
+      "summary": "A savory, spicy sourdough loaded with sharp cheddar and jalapeños.",
+      "ingredients": [
+        {
+          "item": "100g active sourdough starter"
+        },
+        {
+          "item": "400g bread flour (or all-purpose)"
+        },
+        {
+          "item": "280g lukewarm water"
+        },
+        {
+          "item": "8g fine sea salt"
+        },
+        {
+          "item": "100–120g sharp cheddar, cubed"
+        },
+        {
+          "item": "40–60g sliced jalapeños (fresh or pickled; seeds removed for milder flavor)"
+        }
+      ],
+      "tips": [
+        "Want it cheesier? Add up to 150g cheddar, but be sure to drain any oil or moisture.",
+        "Want more heat? Leave in some fresh chilis or jalapeño seeds.",
+        "Great as toast."
+      ],
+      "steps": [
+        {
+          "title": "Mix the Dough",
+          "instruction": "In a large bowl, mix the starter and water until mostly dissolved. Add the flour and stir until a shaggy dough forms. Cover and rest for 30–45 minutes.",
+          "timer": {
+            "seconds": 1800,
+            "label": "Autolyse rest",
+            "rangeText": "30–45 minutes"
+          }
+        },
+        {
+          "title": "Add Salt",
+          "instruction": "Sprinkle salt over the dough and work it in using folding and pinching motions. Let rest for 15 minutes.",
+          "timer": {
+            "seconds": 900,
+            "label": "Rest",
+            "rangeText": "15 minutes"
+          }
+        },
+        {
+          "title": "Stretch & Folds",
+          "instruction": "During roughly the first 2 hours, perform 2–3 sets of stretch and folds — one set every 30–45 minutes. On the second or third set, gently add the cubed cheddar and sliced jalapeños, spreading them evenly through the dough. Reset the timer after each fold.",
+          "timer": {
+            "seconds": 1800,
+            "label": "Until next fold",
+            "rangeText": "every 30–45 min · 2–3 sets"
+          },
+          "tip": "Add cheese and jalapeños on the 2nd or 3rd fold so they spread evenly."
+        },
+        {
+          "title": "Bulk Fermentation",
+          "instruction": "After your folds, let the dough continue at room temperature until puffy and risen by about half — roughly 4–5 hours total from mixing.",
+          "timer": {
+            "seconds": 7200,
+            "label": "Bulk fermentation",
+            "rangeText": "about 2–3 h more · 4–5 h total"
+          }
+        },
+        {
+          "title": "Pre-shape and Rest",
+          "instruction": "Turn the dough onto a lightly floured surface. Shape into a round and let rest uncovered for 20–30 minutes.",
+          "timer": {
+            "seconds": 1200,
+            "label": "Bench rest",
+            "rangeText": "20–30 minutes"
+          }
+        },
+        {
+          "title": "Final Shape",
+          "instruction": "Reshape into a tight ball and place seam side up in a floured proofing basket or a bowl lined with a floured cloth."
+        },
+        {
+          "title": "Final Proof",
+          "instruction": "Let rise for 1–2 hours at room temperature, or cover and refrigerate overnight for 8–12 hours.",
+          "timer": {
+            "seconds": 3600,
+            "label": "Final proof (room temp)",
+            "rangeText": "1–2 hours, or 8–12 hours in fridge"
+          }
+        },
+        {
+          "title": "Preheat & Bake",
+          "instruction": "Preheat oven to 475°F (245°C) with a Dutch oven inside for at least 30 minutes. Invert the dough onto parchment paper, score the top, and transfer to the hot pot. Bake covered for 25 minutes, then uncover and bake another 20–25 minutes until deep golden brown.",
+          "timer": {
+            "seconds": 1500,
+            "label": "Bake covered",
+            "rangeText": "25 minutes"
+          }
+        },
+        {
+          "title": "Bake Uncovered",
+          "instruction": "Remove the lid and bake another 20–25 minutes until deep golden brown.",
+          "timer": {
+            "seconds": 1320,
+            "label": "Bake uncovered",
+            "rangeText": "20–25 minutes"
+          }
+        },
+        {
+          "title": "Cool",
+          "instruction": "Transfer to a wire rack and cool completely — at least 1 hour — before slicing.",
+          "timer": {
+            "seconds": 3600,
+            "label": "Cool",
+            "rangeText": "at least 1 hour"
+          }
+        }
+      ]
+    },
+    {
+      "id": "focaccia",
+      "name": "Focaccia",
+      "category": "Bread",
+      "emoji": "🫠",
+      "yield": "1 pan",
+      "totalTime": "About 24 hours (incl. cold proof)",
+      "difficulty": "Beginner",
+      "summary": "A dimpled, olive-oil-rich flatbread that's hard to get wrong.",
+      "ingredients": [
+        {
+          "item": "100g active sourdough starter"
+        },
+        {
+          "item": "320g lukewarm water"
+        },
+        {
+          "item": "400g bread flour (or all-purpose)"
+        },
+        {
+          "item": "8g sea salt"
+        },
+        {
+          "item": "10g olive oil (plus extra for drizzling)"
+        },
+        {
+          "item": "5g sugar"
+        },
+        {
+          "item": "Fresh or dried herbs (e.g. rosemary, thyme, oregano) — optional"
+        },
+        {
+          "item": "Optional toppings: sliced olives, tomatoes, garlic, red onion"
+        }
+      ],
+      "tips": [
+        "Cold fermentation is optional but recommended for better flavor and texture. From step 3, cover edges and refrigerate.",
+        "The dough will be sticky — that's normal. Use wet or oiled hands when handling it.",
+        "Use sea or flaky salt and spelt for a rustic touch, or whole wheat for extra flavor.",
+        "Focaccia freezes well. Let it cool completely before freezing in slices."
+      ],
+      "steps": [
+        {
+          "title": "Mix the Dough",
+          "instruction": "Mix the sourdough starter, water, sugar, and olive oil until mostly combined. Add the flour and salt, then mix until a shaggy, sticky dough forms. No need to knead at this stage."
+        },
+        {
+          "title": "Rest & Stretch and Folds",
+          "instruction": "Cover the dough and let it rest 30 minutes. Then perform 2–3 sets of stretch and folds, one set every 30–45 minutes, to strengthen the gluten. The timer covers the initial rest and each fold interval — reset it after every fold.",
+          "timer": {
+            "seconds": 1800,
+            "label": "Rest / until next fold",
+            "rangeText": "30 min, then every 30–45 min"
+          },
+          "tip": "The dough is wet and sticky — wet your hands so it doesn't stick during folds."
+        },
+        {
+          "title": "Bulk Fermentation",
+          "instruction": "After the final fold, cover the bowl lightly and let it ferment at room temperature until noticeably puffy and expanded — about 6–8 hours.",
+          "timer": {
+            "seconds": 21600,
+            "label": "Bulk fermentation",
+            "rangeText": "6–8 hours"
+          }
+        },
+        {
+          "title": "Cold Fermentation (Recommended)",
+          "instruction": "Transfer the dough to an oiled container and refrigerate overnight (8–24 hours). This step enhances flavor and makes the dough easier to handle.",
+          "timer": {
+            "seconds": 28800,
+            "label": "Cold ferment",
+            "rangeText": "8–24 hours"
+          },
+          "tip": "Optional but recommended for the best flavor and texture."
+        },
+        {
+          "title": "Shape & Second Rise",
+          "instruction": "Grease a baking pan generously with olive oil. Transfer the dough to the pan and gently stretch it to fill the edges. If it resists, let it rest for 10–15 minutes, then try again. Cover and let it rise at room temperature for 1–2 hours until bubbly.",
+          "timer": {
+            "seconds": 3600,
+            "label": "Second rise",
+            "rangeText": "1–2 hours"
+          }
+        },
+        {
+          "title": "Dimple & Add Toppings",
+          "instruction": "Preheat your oven to 450°F (230°C). Drizzle the dough with more olive oil. Use oiled fingers to press deep dimples across the surface. Add herbs, coarse sea salt, and optional toppings of your choice.",
+          "timer": {
+            "seconds": 600,
+            "label": "Preheat",
+            "rangeText": "while oven heats"
+          }
+        },
+        {
+          "title": "Bake",
+          "instruction": "Bake for 20–25 minutes, or until golden brown and crisp on the edges. Rotate the pan halfway through for even browning.",
+          "timer": {
+            "seconds": 1200,
+            "label": "Bake",
+            "rangeText": "20–25 minutes"
+          }
+        },
+        {
+          "title": "Cool & Serve",
+          "instruction": "Remove from the oven and let it cool in the pan for 10 minutes, then transfer to a wire rack. Slice and enjoy warm or at room temperature.",
+          "timer": {
+            "seconds": 600,
+            "label": "Cool in pan",
+            "rangeText": "10 minutes"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bagels",
+      "name": "Bagels",
+      "category": "Bread",
+      "emoji": "🥯",
+      "yield": "8 bagels",
+      "totalTime": "About 24 hours (incl. cold proof)",
+      "difficulty": "Intermediate",
+      "summary": "Chewy boiled-then-baked sourdough bagels with a glossy crust.",
+      "ingredients": [
+        {
+          "item": "150g active sourdough starter"
+        },
+        {
+          "item": "240g water"
+        },
+        {
+          "item": "360g bread flour (high-protein recommended)"
+        },
+        {
+          "item": "25g sugar (for flavor and browning)"
+        },
+        {
+          "item": "9g fine sea salt"
+        },
+        {
+          "item": "2.5g baking soda (optional, mixed into the boiling water)"
+        },
+        {
+          "item": "Optional toppings: sesame seeds, poppy seeds, everything seasoning"
+        }
+      ],
+      "tips": [
+        "For a shiny crust, brush boiled bagels with a beaten egg before baking.",
+        "To test readiness for boiling, drop one bagel in water — if it floats, it's ready.",
+        "Under-proofed bagels have better chew and appearance but can be made same-day if time is tight.",
+        "Bagels freeze well. Slice before freezing for quick toasting."
+      ],
+      "steps": [
+        {
+          "title": "Make the Dough",
+          "instruction": "In a large bowl, mix the active starter and water until well combined. Add 240g of the bread flour and stir into a sticky dough. Add the sugar and salt, and mix thoroughly. Gradually add the remaining flour while kneading until the dough becomes smooth, stiff, and elastic (about 8–10 minutes by hand or 5 minutes with a stand mixer)."
+        },
+        {
+          "title": "Bulk Fermentation",
+          "instruction": "Cover the dough with a lid or damp towel and let it ferment at room temperature for 4–6 hours, until slightly puffy but not doubled.",
+          "timer": {
+            "seconds": 14400,
+            "label": "Bulk fermentation",
+            "rangeText": "4–6 hours"
+          }
+        },
+        {
+          "title": "Shape the Bagels",
+          "instruction": "Turn the dough out onto a lightly floured surface. Divide into 8 equal pieces (around 100g each). Roll each into a tight ball, then poke a hole in the center of each ball and gently stretch into a ring."
+        },
+        {
+          "title": "Cold Proof (Optional but Recommended)",
+          "instruction": "Place the shaped bagels on a parchment-lined tray. Cover loosely and refrigerate overnight (8–12 hours). This improves flavor, structure, and surface drying — essential for the chewy crust.",
+          "timer": {
+            "seconds": 28800,
+            "label": "Cold proof",
+            "rangeText": "8–12 hours"
+          }
+        },
+        {
+          "title": "Boil the Bagels",
+          "instruction": "Preheat your oven to 425°F (220°C). Bring a large pot of water to a gentle boil and add the baking soda (optional — helps browning). Boil each bagel for 30–45 seconds per side. Remove with a slotted spoon and return to the parchment.",
+          "timer": {
+            "seconds": 30,
+            "label": "Boil first side",
+            "rangeText": "30–45 seconds"
+          }
+        },
+        {
+          "title": "Add Toppings (Optional)",
+          "instruction": "While the bagels are still damp, sprinkle with sesame seeds, poppy seeds, or your favorite seasoning blend."
+        },
+        {
+          "title": "Bake",
+          "instruction": "Bake at 425°F (220°C) for 20–25 minutes, until golden brown and firm. Rotate the tray halfway through for even browning.",
+          "timer": {
+            "seconds": 1200,
+            "label": "Bake",
+            "rangeText": "20–25 minutes"
+          }
+        },
+        {
+          "title": "Cool & Enjoy",
+          "instruction": "Let the bagels cool on a wire rack for at least 30 minutes before slicing. Best enjoyed fresh or toasted with your favorite toppings.",
+          "timer": {
+            "seconds": 1800,
+            "label": "Cool",
+            "rangeText": "at least 30 minutes"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pizza-dough",
+      "name": "Sourdough Pizza Dough",
+      "category": "Bread",
+      "emoji": "🍕",
+      "yield": "2–3 pizzas",
+      "totalTime": "About 24 hours (incl. cold ferment)",
+      "difficulty": "Intermediate",
+      "summary": "A chewy, blistered sourdough pizza base with a long cold ferment for flavor.",
+      "ingredients": [
+        {
+          "item": "120g active sourdough starter"
+        },
+        {
+          "item": "390g lukewarm water"
+        },
+        {
+          "item": "500g all-purpose or 00 flour"
+        },
+        {
+          "item": "10g fine sea salt"
+        },
+        {
+          "item": "20g olive oil"
+        }
+      ],
+      "tips": [
+        "For extra chew and flavor, use a 50/50 mix of bread flour and 00 flour.",
+        "If the dough resists stretching, let it rest for 10 minutes and try again — it relaxes and gets easier.",
+        "You can freeze dough balls raw after the cold ferment — just thaw overnight in the fridge before use."
+      ],
+      "steps": [
+        {
+          "title": "Mix the Dough",
+          "instruction": "In a large bowl, mix the sourdough starter and lukewarm water until dissolved. Add the flour and mix with a spoon (or by hand) until no dry bits remain. Let rest for 30 minutes (autolyse).",
+          "timer": {
+            "seconds": 1800,
+            "label": "Autolyse rest",
+            "rangeText": "30 minutes"
+          }
+        },
+        {
+          "title": "Add Salt and Oil",
+          "instruction": "Sprinkle the salt evenly and drizzle the olive oil over the dough. Mix well by folding the dough until both salt and oil are fully incorporated."
+        },
+        {
+          "title": "Stretch & Folds",
+          "instruction": "During roughly the first 2 hours, perform 2–3 sets of stretch and folds — one set every 30–45 minutes — to build gluten strength. Reset the timer after each fold.",
+          "timer": {
+            "seconds": 1800,
+            "label": "Until next fold",
+            "rangeText": "every 30–45 min · 2–3 sets"
+          },
+          "tip": "Keep the room around 70–75°F / 21–24°C for an even ferment."
+        },
+        {
+          "title": "Bulk Fermentation",
+          "instruction": "After your folds, let the dough continue at room temperature until puffy and risen by about half — roughly 4–6 hours total from mixing.",
+          "timer": {
+            "seconds": 7200,
+            "label": "Bulk fermentation",
+            "rangeText": "about 2–4 h more · 4–6 h total"
+          }
+        },
+        {
+          "title": "Cold Ferment (Optional but Recommended)",
+          "instruction": "After bulk fermentation, divide the dough into 2–3 portions. Shape into balls and place in lightly oiled containers or dough boxes. Cover and refrigerate for 12–48 hours — this develops flavor and makes the dough easier to stretch.",
+          "timer": {
+            "seconds": 43200,
+            "label": "Cold ferment",
+            "rangeText": "12–48 hours"
+          },
+          "tip": "Longer cold ferment = more flavor. 24 hours is a great sweet spot."
+        },
+        {
+          "title": "Bring to Room Temperature",
+          "instruction": "Take the dough out 1–2 hours before baking to come to room temperature and relax.",
+          "timer": {
+            "seconds": 3600,
+            "label": "Warm up",
+            "rangeText": "1–2 hours"
+          }
+        },
+        {
+          "title": "Shape and Bake",
+          "instruction": "Preheat your oven to its highest temperature (ideally 475–500°F / 245–260°C) with a pizza stone or steel inside if possible. Lightly flour your surface, stretch each dough ball into a pizza round, and add your favorite toppings. Bake for 7–10 minutes until golden and bubbly.",
+          "timer": {
+            "seconds": 420,
+            "label": "Bake",
+            "rangeText": "7–10 minutes"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sweet-rolls",
+      "name": "Sweet Rolls",
+      "category": "Sweet",
+      "emoji": "🍯",
+      "yield": "10–12 rolls",
+      "totalTime": "About 12 hours (incl. proof)",
+      "difficulty": "Intermediate",
+      "summary": "Soft, fluffy cinnamon sweet rolls topped with cream cheese icing.",
+      "ingredients": [
+        {
+          "group": "Dough",
+          "item": "100g active sourdough starter"
+        },
+        {
+          "group": "Dough",
+          "item": "240g lukewarm milk (or plant-based alternative)"
+        },
+        {
+          "group": "Dough",
+          "item": "60g soft butter"
+        },
+        {
+          "group": "Dough",
+          "item": "50g sugar"
+        },
+        {
+          "group": "Dough",
+          "item": "1 egg"
+        },
+        {
+          "group": "Dough",
+          "item": "450g all-purpose flour"
+        },
+        {
+          "group": "Dough",
+          "item": "7g salt"
+        },
+        {
+          "group": "Filling",
+          "item": "75g soft butter"
+        },
+        {
+          "group": "Filling",
+          "item": "100g brown sugar"
+        },
+        {
+          "group": "Filling",
+          "item": "2 tablespoons ground cinnamon"
+        },
+        {
+          "group": "Icing (Optional)",
+          "item": "60g cream cheese"
+        },
+        {
+          "group": "Icing (Optional)",
+          "item": "30g soft butter"
+        },
+        {
+          "group": "Icing (Optional)",
+          "item": "100g powdered sugar"
+        },
+        {
+          "group": "Icing (Optional)",
+          "item": "1–2 tablespoons milk or cream"
+        },
+        {
+          "group": "Icing (Optional)",
+          "item": "½ teaspoon vanilla extract"
+        }
+      ],
+      "tips": [
+        "Make-ahead version: shape the rolls and refrigerate overnight before the second rise. Let come to room temp for 1–2 hours before baking.",
+        "The longer fermentation adds tangy flavor — perfectly balanced by the sweet filling and icing.",
+        "You can freeze the shaped, unbaked rolls — just thaw, rise, and bake later."
+      ],
+      "steps": [
+        {
+          "title": "Mix the Dough",
+          "instruction": "In a large bowl, mix together the starter, milk, butter, sugar, and egg until well blended. Add flour and salt, mixing until a soft dough forms."
+        },
+        {
+          "title": "Knead",
+          "instruction": "Knead the dough for 8–10 minutes by hand or mixer until smooth and elastic. Add a touch more flour if sticky, but keep the dough soft."
+        },
+        {
+          "title": "Bulk Fermentation",
+          "instruction": "Cover and let rise at room temperature for 6–8 hours (or overnight) until doubled in size.",
+          "timer": {
+            "seconds": 21600,
+            "label": "Bulk fermentation",
+            "rangeText": "6–8 hours or overnight"
+          }
+        },
+        {
+          "title": "Prepare Filling",
+          "instruction": "Mix the soft butter, brown sugar, and cinnamon into a spreadable paste."
+        },
+        {
+          "title": "Shape the Rolls",
+          "instruction": "Turn dough onto a lightly floured surface. Roll into a rectangle (about 9 × 13 inches). Spread the filling evenly, then roll tightly from the long edge and slice into 10–12 rolls."
+        },
+        {
+          "title": "Second Rise",
+          "instruction": "Place rolls into a greased or parchment-lined baking pan. Cover and let rise for 2–4 hours, or until puffy.",
+          "timer": {
+            "seconds": 7200,
+            "label": "Second rise",
+            "rangeText": "2–4 hours"
+          }
+        },
+        {
+          "title": "Bake",
+          "instruction": "Preheat oven to 375°F (190°C). Bake the rolls for 20–25 minutes until golden brown.",
+          "timer": {
+            "seconds": 1200,
+            "label": "Bake",
+            "rangeText": "20–25 minutes"
+          }
+        },
+        {
+          "title": "Icing (Optional)",
+          "instruction": "While the rolls are baking, beat the cream cheese, butter, sugar, vanilla, and milk until smooth. Spread over the warm rolls.",
+          "tip": "Spread icing while rolls are still warm for that gooey finish."
+        }
+      ]
+    },
+    {
+      "id": "banana-bread",
+      "name": "Banana Bread",
+      "category": "Sweet",
+      "emoji": "🍌",
+      "yield": "1 loaf",
+      "totalTime": "About 1.5 hours",
+      "difficulty": "Beginner",
+      "summary": "A quick (no-proof) sourdough-discard banana bread, moist and easy.",
+      "ingredients": [
+        {
+          "item": "150g sourdough discard"
+        },
+        {
+          "item": "250g ripe banana (about 2 medium bananas, mashed)"
+        },
+        {
+          "item": "100g granulated sugar"
+        },
+        {
+          "item": "50g brown sugar"
+        },
+        {
+          "item": "2 large eggs"
+        },
+        {
+          "item": "75g neutral oil (e.g. vegetable or light olive oil)"
+        },
+        {
+          "item": "1 teaspoon vanilla extract"
+        },
+        {
+          "item": "190g all-purpose flour"
+        },
+        {
+          "item": "1 teaspoon baking soda"
+        },
+        {
+          "item": "½ teaspoon baking powder"
+        },
+        {
+          "item": "½ teaspoon salt"
+        },
+        {
+          "item": "1 teaspoon ground cinnamon (optional)"
+        },
+        {
+          "item": "50–80g chopped walnuts or chocolate chips (optional)"
+        }
+      ],
+      "tips": [
+        "Use bananas with lots of brown spots for the best flavor and sweetness.",
+        "Want extra moisture? Replace 25g of oil with sour cream or yogurt.",
+        "Banana bread freezes well — wrap tightly and store up to 2 months."
+      ],
+      "steps": [
+        {
+          "title": "Preheat Oven",
+          "instruction": "Preheat your oven to 350°F (175°C). Grease or line a 9×5-inch loaf pan with parchment paper.",
+          "timer": {
+            "seconds": 600,
+            "label": "Preheat",
+            "rangeText": "while you mix"
+          }
+        },
+        {
+          "title": "Mix Wet Ingredients",
+          "instruction": "In a large mixing bowl, whisk together mashed bananas, sourdough discard, sugar, brown sugar, eggs, oil, and vanilla until smooth."
+        },
+        {
+          "title": "Add Dry Ingredients",
+          "instruction": "Add the flour, baking soda, baking powder, salt, and cinnamon (if using). Stir the mixture to the wet ingredients until just combined — don't overmix."
+        },
+        {
+          "title": "Add Optional Mix-ins",
+          "instruction": "Fold in chopped nuts or chocolate chips if using."
+        },
+        {
+          "title": "Bake",
+          "instruction": "Pour the batter into the prepared pan and smooth the top. Bake for 55–65 minutes, or until a toothpick inserted in the center comes out clean or with just a few moist crumbs.",
+          "timer": {
+            "seconds": 3300,
+            "label": "Bake",
+            "rangeText": "55–65 minutes"
+          }
+        },
+        {
+          "title": "Cool",
+          "instruction": "Let cool in the pan for 10 minutes, then transfer to a wire rack to cool completely before slicing.",
+          "timer": {
+            "seconds": 600,
+            "label": "Cool in pan",
+            "rangeText": "10 minutes"
+          },
+          "tip": "For neat slices, cool completely. To bake as muffins instead, use a 12-cup muffin tin and bake 20–24 minutes."
+        }
+      ]
+    },
+    {
+      "id": "biscuits",
+      "name": "Biscuits",
+      "category": "Sweet",
+      "emoji": "🧈",
+      "yield": "About 8 biscuits",
+      "totalTime": "About 45 minutes",
+      "difficulty": "Beginner",
+      "summary": "Flaky, tender sourdough-discard biscuits with buttery layers.",
+      "ingredients": [
+        {
+          "item": "120g active sourdough starter"
+        },
+        {
+          "item": "250g all-purpose flour"
+        },
+        {
+          "item": "10g baking powder (≈2 tsp)"
+        },
+        {
+          "item": "5g sugar (≈1 tsp)"
+        },
+        {
+          "item": "5g salt (≈1 tsp)"
+        },
+        {
+          "item": "115g cold unsalted butter (cubed)"
+        },
+        {
+          "item": "120g cold milk or buttermilk"
+        }
+      ],
+      "tips": [
+        "For even flakier results, chill the shaped biscuits in the refrigerator for 15–20 minutes while you preheat the oven.",
+        "Use buttermilk instead of milk for extra flavor and tenderness.",
+        "Don't twist the cutter when shaping — it can seal the edges and prevent full rise."
+      ],
+      "steps": [
+        {
+          "title": "Prepare Dry Ingredients",
+          "instruction": "In a large mixing bowl, whisk together the flour, baking powder, sugar, and salt."
+        },
+        {
+          "title": "Cut in the Butter",
+          "instruction": "Add the cold cubed butter and use a pastry cutter or your fingertips to blend until the mixture resembles coarse crumbs."
+        },
+        {
+          "title": "Add Sourdough and Milk",
+          "instruction": "Add the sourdough starter and milk to the bowl. Stir just until a rough dough forms. Do not overmix."
+        },
+        {
+          "title": "Fold for Layers",
+          "instruction": "Turn the dough onto a floured surface. Gently pat into a rectangle, then fold in thirds (like a letter). Repeat this folding 2–3 times to build flaky layers."
+        },
+        {
+          "title": "Shape and Cut",
+          "instruction": "Pat the dough to about 1-inch thickness and cut with a biscuit cutter or floured glass. Gather scraps and re-roll as needed.",
+          "tip": "Don't twist the cutter — it seals the edges and limits rise."
+        },
+        {
+          "title": "Chill (Optional)",
+          "instruction": "Chill the shaped biscuits in the fridge for 15–20 minutes while you preheat the oven for even flakier results.",
+          "timer": {
+            "seconds": 900,
+            "label": "Chill",
+            "rangeText": "15–20 minutes"
+          }
+        },
+        {
+          "title": "Bake",
+          "instruction": "Preheat oven to 425°F (220°C). Place biscuits on a parchment-lined baking sheet and bake for 15–18 minutes, or until golden brown on top.",
+          "timer": {
+            "seconds": 900,
+            "label": "Bake",
+            "rangeText": "15–18 minutes"
+          }
+        },
+        {
+          "title": "Cool and Serve",
+          "instruction": "Let the biscuits cool slightly before serving. Enjoy with butter, honey, or jam!"
+        }
+      ]
+    },
+    {
+      "id": "pancakes",
+      "name": "Pancakes",
+      "category": "Breakfast",
+      "emoji": "🥞",
+      "yield": "About 8 pancakes",
+      "totalTime": "About 30 minutes",
+      "difficulty": "Beginner",
+      "summary": "Light, fluffy sourdough pancakes — great for using up starter.",
+      "ingredients": [
+        {
+          "item": "200g active sourdough starter"
+        },
+        {
+          "item": "150g all-purpose flour"
+        },
+        {
+          "item": "250g milk (or plant-based milk)"
+        },
+        {
+          "item": "1 egg"
+        },
+        {
+          "item": "25g sugar (≈2 tbsp)"
+        },
+        {
+          "item": "4g salt (≈¾ tsp)"
+        },
+        {
+          "item": "5g baking powder (≈1 tsp)"
+        },
+        {
+          "item": "28g melted butter or neutral oil (≈2 tbsp)"
+        },
+        {
+          "item": "1 tsp vanilla extract (optional)"
+        }
+      ],
+      "tips": [
+        "Want extra fluff? Add ½ tsp baking soda just before cooking.",
+        "For more tang, let the batter rest in the fridge overnight before cooking.",
+        "Add blueberries, chocolate chips, or chopped bananas to the batter for variation."
+      ],
+      "steps": [
+        {
+          "title": "Mix Wet Ingredients",
+          "instruction": "In a large bowl, whisk together the starter, milk, egg, melted butter, and vanilla extract (if using)."
+        },
+        {
+          "title": "Add Dry Ingredients",
+          "instruction": "Add the flour, sugar, salt, and baking powder to the wet mixture. Stir just until combined — small lumps are okay. Do not overmix."
+        },
+        {
+          "title": "Rest (Optional but Recommended)",
+          "instruction": "Let the batter rest for 10–15 minutes to improve texture and rise. This also allows the flour to hydrate fully.",
+          "timer": {
+            "seconds": 600,
+            "label": "Rest batter",
+            "rangeText": "10–15 minutes"
+          }
+        },
+        {
+          "title": "Cook the Pancakes",
+          "instruction": "Heat a lightly greased nonstick skillet or griddle over medium heat. Pour about ¼ cup of batter per pancake. Cook until bubbles appear on the surface and the edges begin to set (about 2–3 minutes), then flip and cook another 1–2 minutes.",
+          "timer": {
+            "seconds": 150,
+            "label": "First side",
+            "rangeText": "2–3 minutes"
+          }
+        },
+        {
+          "title": "Serve",
+          "instruction": "Stack warm pancakes and serve with butter, maple syrup, fruit, or yogurt."
+        }
+      ]
+    },
+    {
+      "id": "waffles",
+      "name": "Waffles",
+      "category": "Breakfast",
+      "emoji": "🧇",
+      "yield": "About 4–6 waffles",
+      "totalTime": "About 30 minutes",
+      "difficulty": "Beginner",
+      "summary": "Crispy-outside, fluffy-inside sourdough waffles.",
+      "ingredients": [
+        {
+          "item": "200g active sourdough starter"
+        },
+        {
+          "item": "250g milk (or buttermilk / plant-based milk)"
+        },
+        {
+          "item": "100g all-purpose flour"
+        },
+        {
+          "item": "30g sugar (about 2 tbsp)"
+        },
+        {
+          "item": "5g salt (about ¾ tsp)"
+        },
+        {
+          "item": "1 large egg"
+        },
+        {
+          "item": "50g melted butter or neutral oil (about ¼ cup)"
+        },
+        {
+          "item": "5g baking powder (1 tsp)"
+        },
+        {
+          "item": "1 tsp vanilla extract (optional)"
+        }
+      ],
+      "tips": [
+        "Overnight version: for more sour flavor, mix all ingredients except egg, baking powder, and butter, then refrigerate. In the morning, stir in the remaining ingredients just before cooking.",
+        "Crispier waffles: let the cooked waffles rest for a minute on a wire rack after cooking to maintain crispness.",
+        "Add-ins: feel free to fold in chopped blueberries or mini chocolate chips for extra flair."
+      ],
+      "steps": [
+        {
+          "title": "Mix Wet Ingredients",
+          "instruction": "In a mixing bowl, whisk together the sourdough starter, milk, egg, melted butter, and vanilla extract."
+        },
+        {
+          "title": "Add Dry Ingredients",
+          "instruction": "Stir in the flour, sugar, salt, and baking powder until just combined. Do not overmix."
+        },
+        {
+          "title": "Rest the Batter (Optional)",
+          "instruction": "Let the batter rest for 10–20 minutes at room temperature to thicken and crisp — fermentation enhances flavor.",
+          "timer": {
+            "seconds": 600,
+            "label": "Rest batter",
+            "rangeText": "10–20 minutes"
+          }
+        },
+        {
+          "title": "Preheat the Waffle Iron",
+          "instruction": "Preheat your waffle iron and heat it according to the manufacturer's instructions. Lightly grease if needed."
+        },
+        {
+          "title": "Cook the Waffles",
+          "instruction": "Pour batter into the waffle iron and cook until golden brown and crisp, usually about 4–5 minutes depending on your iron.",
+          "timer": {
+            "seconds": 270,
+            "label": "Cook",
+            "rangeText": "about 4–5 minutes"
+          }
+        },
+        {
+          "title": "Serve",
+          "instruction": "Serve immediately with butter, maple syrup, fruit, yogurt, or whipped cream."
+        }
+      ]
+    },
+    {
+      "id": "chocolate-chip-cookies",
+      "name": "Chocolate Chip Cookies",
+      "category": "Sweet",
+      "emoji": "🍪",
+      "yield": "About 18–24 cookies",
+      "totalTime": "About 12 hours (incl. chill)",
+      "difficulty": "Beginner",
+      "summary": "Chewy sourdough-discard chocolate chip cookies with deep flavor.",
+      "ingredients": [
+        {
+          "item": "226g soft unsalted butter"
+        },
+        {
+          "item": "200g brown sugar"
+        },
+        {
+          "item": "80g white sugar"
+        },
+        {
+          "item": "1 large egg"
+        },
+        {
+          "item": "6g vanilla extract"
+        },
+        {
+          "item": "150g sourdough discard (unfed, room temperature)"
+        },
+        {
+          "item": "375g all-purpose flour"
+        },
+        {
+          "item": "5g baking soda"
+        },
+        {
+          "item": "5g salt"
+        },
+        {
+          "item": "250g chocolate chips (semi-sweet or dark, your choice)"
+        }
+      ],
+      "tips": [
+        "Flavor improves with chill time — overnight rest allows the flour and discard to develop richer, deeper notes.",
+        "Don't skip the chill — it prevents spreading and creates chewy centers.",
+        "For crispier edges and chewy centers, pull the cookies when just set in the middle.",
+        "You can freeze the dough balls raw and bake directly from frozen (add 1–2 minutes to bake time).",
+        "Sprinkle flaky sea salt on top before baking for a gourmet touch."
+      ],
+      "steps": [
+        {
+          "title": "Cream the Wet Ingredients",
+          "instruction": "In a large bowl using a hand or stand mixer on medium-high speed, cream together the softened butter, brown sugar, and white sugar until light and fluffy (at least 2–3 minutes). Add the egg, vanilla extract, and sourdough discard. Beat again on medium until well incorporated and smooth."
+        },
+        {
+          "title": "Add Dry Ingredients",
+          "instruction": "Add the flour, baking soda, and salt. Mix on low speed until just combined — don't overmix."
+        },
+        {
+          "title": "Fold in Chocolate Chips",
+          "instruction": "Stir in chocolate chips by hand or on low speed until evenly distributed."
+        },
+        {
+          "title": "Chill the Dough",
+          "instruction": "Cover and refrigerate the dough for at least 4 hours (up to 72 hours) for best flavor and texture. Chill overnight for best results.",
+          "timer": {
+            "seconds": 14400,
+            "label": "Chill dough",
+            "rangeText": "at least 4 hours (up to 72 hours)"
+          },
+          "tip": "Don't skip the chill — it prevents spreading and creates chewy centers."
+        },
+        {
+          "title": "Preheat & Portion",
+          "instruction": "Preheat your oven to 350°F (175°C). Line a baking sheet with parchment paper. Scoop the dough into 1-inch balls (about 2 tablespoons each) and place at least 2 inches apart.",
+          "timer": {
+            "seconds": 600,
+            "label": "Preheat",
+            "rangeText": "while you portion"
+          }
+        },
+        {
+          "title": "Bake",
+          "instruction": "Bake for 9–12 minutes, until the edges are just golden and the centers still look slightly underdone — they'll finish setting as they cool.",
+          "timer": {
+            "seconds": 540,
+            "label": "Bake",
+            "rangeText": "9–12 minutes"
+          }
+        },
+        {
+          "title": "Cool",
+          "instruction": "Allow cookies to cool on the baking sheet for 5 minutes, then transfer to a wire rack to cool completely.",
+          "timer": {
+            "seconds": 300,
+            "label": "Cool on sheet",
+            "rangeText": "5 minutes"
+          }
+        }
+      ]
+    },
+    {
+      "id": "chocolate-cake",
+      "name": "Chocolate Cake",
+      "category": "Sweet",
+      "emoji": "🍰",
+      "yield": "1 cake (9×13 or two 8-inch rounds)",
+      "totalTime": "About 1 hour",
+      "difficulty": "Beginner",
+      "summary": "A rich, moist sourdough-discard chocolate cake.",
+      "ingredients": [
+        {
+          "item": "200g sourdough discard"
+        },
+        {
+          "item": "240g all-purpose flour"
+        },
+        {
+          "item": "60g unsweetened cocoa powder"
+        },
+        {
+          "item": "1½ teaspoons baking soda"
+        },
+        {
+          "item": "½ teaspoon salt"
+        },
+        {
+          "item": "200g granulated sugar"
+        },
+        {
+          "item": "100g brown sugar"
+        },
+        {
+          "item": "2 large eggs"
+        },
+        {
+          "item": "240ml milk (or any milk)"
+        },
+        {
+          "item": "120ml neutral oil (e.g. canola or vegetable oil)"
+        },
+        {
+          "item": "1 teaspoon vanilla extract"
+        },
+        {
+          "item": "240ml hot water or hot coffee (coffee deepens chocolate flavor but is optional)"
+        }
+      ],
+      "tips": [
+        "Make sure your discard has no signs of spoilage (no pink or mold).",
+        "This cake is very forgiving — discard that's a few days old in the fridge works fine.",
+        "You can store it covered for up to 3 days, or freeze slices for later."
+      ],
+      "steps": [
+        {
+          "title": "Preheat Oven",
+          "instruction": "Preheat your oven to 350°F (175°C). Grease and flour a 9×13 inch (23×33 cm) baking pan or two 8-inch round pans.",
+          "timer": {
+            "seconds": 600,
+            "label": "Preheat",
+            "rangeText": "while you mix"
+          }
+        },
+        {
+          "title": "Mix Dry Ingredients",
+          "instruction": "In a large bowl, sift together flour, cocoa powder, baking soda, and salt. Set aside."
+        },
+        {
+          "title": "Combine Wet Ingredients",
+          "instruction": "In another bowl, whisk together eggs, sugar, brown sugar, milk, oil, and vanilla until well blended. Stir in the sourdough discard and fully incorporate."
+        },
+        {
+          "title": "Combine Wet and Dry",
+          "instruction": "Gradually mix the dry ingredients into the wet until no flour remains. Slowly add the hot water (or hot coffee), mixing until smooth. The batter will be thin — this is normal."
+        },
+        {
+          "title": "Bake",
+          "instruction": "Pour the batter into the prepared pan(s). Bake for 30–35 minutes (round pans) or until a toothpick inserted in the center comes out clean.",
+          "timer": {
+            "seconds": 1800,
+            "label": "Bake",
+            "rangeText": "30–35 minutes"
+          }
+        },
+        {
+          "title": "Cool",
+          "instruction": "Allow to cool in the pan for 10–15 minutes, then transfer to a wire rack to cool completely.",
+          "timer": {
+            "seconds": 600,
+            "label": "Cool in pan",
+            "rangeText": "10–15 minutes"
+          }
+        },
+        {
+          "title": "Serve",
+          "instruction": "Enjoy as-is or frost with your favorite chocolate frosting once fully cooled."
+        }
+      ]
+    }
+  ]
+}
