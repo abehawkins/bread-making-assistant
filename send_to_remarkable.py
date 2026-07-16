@@ -103,6 +103,8 @@ def start_ssh_tunnel(wifi_ip, ssh_password, local_port=8080):
     try:
         ssh.connect(wifi_ip, username="root", password=ssh_password, timeout=10)
         print(" SSH Connected!")
+        # Bind the USB interface IP to the loopback interface on the tablet so the web server is reachable internally
+        ssh.exec_command("/sbin/ip addr add 10.11.99.1/32 dev lo 2>/dev/null || true")
     except Exception as e:
         print(f" Failed: {e}")
         return None, None
