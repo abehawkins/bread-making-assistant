@@ -82,7 +82,7 @@ const CHAR_MAP = {
   "≈": "~", // ≈
   "️": "", // variation selector-16
   "‑": "-", // non-breaking hyphen
-  " ": " ", // nbsp -> plain space (keeps wrapping simple)
+  " ": " ", // nbsp -> plain space (keeps wrapping simple)
 };
 // chars > 0xFF that WinAnsi *does* support — pass through untouched
 const WINANSI_EXTRA = new Set(
@@ -293,3 +293,66 @@ async function uploadToRemarkable(token, docName, pdfBytes) {
   let parent = "";
   let entries = [];
   try { entries = await api.listItems(); } catch { entries = []; }
+  const folder = entries.find(
+    (e) => e.type === "CollectionType" &&
+      (e.visibleName || "").toLowerCase() === "recipes" &&
+      (!e.parent || e.parent === "")
+  );
+  if (folder) parent = folder.id;
+  else {
+    try { parent = (await api.putFolder("Recipes")).id; } catch { parent = ""; }
+  }
+
+  // Replace an existing doc of the same name in that folder (no duplicates)
+  const existing = entries.filter(
+    (e) => e.type === "DocumentType" &&
+      e.visibleName === docName && (e.parent || "") === parent
+  );
+  for (const e of existing) {
+    try { await api.delete(e.hash); } catch { /* non-fatal */ }
+  }
+
+  // putPdf can race on the server generation — retry a few times, then fall
+  // back to the simple root upload so the recipe still arrives.
+  let lastErr = null;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      return await api.putPdf(docName, pdfBytes, { parent });
+    } catch (e) {
+      lastErr = e;
+      if (!(e instanceof GenerationError)) break;
+    }
+  }
+  try {
+    return await api.uploadPdf(docName, pdfBytes); // root, but it arrives
+  } catch (e) {
+    throw lastErr || e;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Handler
+// ---------------------------------------------------------------------------
+export default async function handler(req, res) {
+  if (req.method !== "POST") return res.status(405).json({ error: "Use POST" });
+  const token = process.env.REMARKABLE_DEVICE_TOKEN;
+  if (!token)
+    return res.status(501).json({ error: "Not configured: add REMARKABLE_DEVICE_TOKEN in Vercel settings." });
+
+  const { recipe } = req.body || {};
+  if (!recipe || !recipe.name)
+    return res.status(400).json({ error: "POST { recipe } using the app's recipe JSON." });
+
+  try {
+    const pdfBytes = await renderKitchenPdf(recipe);
+    const docName = sanitize(recipe.name);
+    await uploadToRemarkable(token, docName, new Uint8Array(pdfBytes));
+    return res.status(200).json({
+      status: "success",
+      message: `"${docName}" sent — it'll appear on the tablet when it syncs.`,
+    });
+  } catch (e) {
+    console.error("send-to-tablet failed:", e);
+    return res.status(502).json({ error: "Upload to reMarkable cloud failed", detail: String(e && e.message || e) });
+  }
+}
