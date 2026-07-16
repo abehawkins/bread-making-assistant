@@ -6,7 +6,18 @@ const BREAD_CATEGORIES=["Starter","Bread","Sweet","Breakfast"];
 function sectionForCategory(cat){return BREAD_CATEGORIES.includes(cat)?"Bread & Baking":"Recipes"}
 function getSectionState(){try{return JSON.parse(localStorage.getItem(LS_SECTIONS)||"{}")}catch(e){return{}}}
 function isSectionOpen(name){const s=getSectionState();return s[name]!==false}
+// Open state with a context-dependent default (used by the favorites-first home).
+// An explicit user toggle (stored key) always wins over the default.
+function isSectionOpenCtx(name,defOpen){const s=getSectionState();return Object.prototype.hasOwnProperty.call(s,name)?s[name]!==false:defOpen}
 function setSectionOpen(name,open){const s=getSectionState();s[name]=open;localStorage.setItem(LS_SECTIONS,JSON.stringify(s))}
+// --- Favorites (per-device, localStorage; the seam a later profile-sync would replace) ---
+const LS_FAVS="bm_favs_v1";
+function getFavs(){try{return new Set(JSON.parse(localStorage.getItem(LS_FAVS)||"[]"))}catch(e){return new Set()}}
+function isFav(id){return getFavs().has(id)}
+function toggleFav(id){const s=getFavs();if(s.has(id))s.delete(id);else s.add(id);localStorage.setItem(LS_FAVS,JSON.stringify([...s]));return s.has(id)}
+// Header tabs. null = favorites-first home; otherwise scope to one library section.
+let activeTab=null; // null | "bread" | "recipes"
+const TAB_SECTION={bread:"Bread & Baking",recipes:"Recipes"};
 let homeSearchQuery="";
 let RECIPES_BUILTIN=[];
 function getCustom(){try{return JSON.parse(localStorage.getItem(LS_CUSTOM)||"[]")}catch(e){return[]}}
@@ -23,8 +34,19 @@ function findRecipe(id){return allRecipes().find(r=>r.id===id)}
 
 let view="home",current=null,run=null,timer=null,history=[];
 const appEl=document.getElementById("app"),titleEl=document.getElementById("title"),backBtn=document.getElementById("backBtn");
-document.getElementById("homeBtn").onclick=()=>{stopTimer();go("home")};
+const tabsEl=document.getElementById("tabs");
+document.getElementById("homeBtn").onclick=()=>{stopTimer();activeTab=null;go("home")};
 backBtn.onclick=()=>{stopTimer();back()};
+// Tabs are static in the header; wire them once. Re-tapping the active tab deselects it.
+tabsEl.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{
+  const t=b.dataset.tab;activeTab=(activeTab===t)?null:t;
+  if(view!=="home"){go("home")}else{renderHome();renderTabs();window.scrollTo(0,0)}
+});
+function renderTabs(){
+  if(!tabsEl)return;
+  tabsEl.style.display=(view==="home")?"flex":"none";
+  tabsEl.querySelectorAll(".tab").forEach(b=>{const on=activeTab===b.dataset.tab;b.classList.toggle("active",on);b.setAttribute("aria-selected",on?"true":"false")});
+}
 function go(v,opts={}){history.push({view,current});view=v;if(opts.recipe!==undefined)current=opts.recipe;render();window.scrollTo(0,0)}
 function back(){const p=history.pop();if(p){view=p.view;current=p.current}else view="home";render();window.scrollTo(0,0)}
 
@@ -34,6 +56,7 @@ function toast(msg){const t=document.createElement("div");t.className="toast";t.
 
 function render(){
   backBtn.style.display=(view==="home")?"none":"flex";
+  renderTabs();
   if(view==="home"){titleEl.textContent="🍞 Recipe Assistant";renderHome()}
   else if(view==="detail"){titleEl.textContent=current.name;renderDetail()}
   else if(view==="run"){titleEl.textContent=current.name;renderRun()}
@@ -44,18 +67,31 @@ function removeFab(){const f=document.getElementById("fab");if(f)f.remove()}
 
 function recipeCardHtml(r){
   const isCustom=getCustom().some(x=>x.id===r.id);
-  return `<div class="rcard" data-id="${r.id}"><div class="emoji">${r.emoji||"🍞"}</div><div class="name">${esc(r.name)}</div><div class="meta">${esc(r.totalTime||"")} · ${(r.steps||[]).length} steps</div><div>${isCustom?'<span class="badge custom">Custom</span>':'<span class="badge">'+esc(r.difficulty||"")+'</span>'}</div></div>`;
+  const fav=isFav(r.id);
+  const star=`<button class="star${fav?" on":""}" data-fav="${r.id}" aria-pressed="${fav?"true":"false"}" aria-label="${fav?"Remove from favorites":"Add to favorites"}">${fav?"★":"☆"}</button>`;
+  return `<div class="rcard" data-id="${r.id}">${star}<div class="emoji">${r.emoji||"🍞"}</div><div class="name">${esc(r.name)}</div><div class="meta">${esc(r.totalTime||"")} · ${(r.steps||[]).length} steps</div><div>${isCustom?'<span class="badge custom">Custom</span>':'<span class="badge">'+esc(r.difficulty||"")+'</span>'}</div></div>`;
 }
 function matchesQuery(r,q){
   if((r.name||"").toLowerCase().includes(q))return true;
   const ings=r.ingredients||[];
   return ings.some(i=>((i.item||"")+" "+(i.note||"")+" "+(i.group||"")).toLowerCase().includes(q));
 }
+function categoryGridHtml(recipes,sec){
+  const cats=[...new Set(recipes.filter(r=>sectionForCategory(r.category)===sec).map(r=>r.category))];
+  let html="";
+  for(const c of cats){
+    html+=`<div class="cat">${esc(c)}</div><div class="grid">`;
+    for(const r of recipes.filter(x=>x.category===c))html+=recipeCardHtml(r);
+    html+=`</div>`;
+  }
+  return html;
+}
 function renderHome(){
   const recipes=allRecipes();
   const q=homeSearchQuery.trim().toLowerCase();
   let html=`<input class="search" id="search" placeholder="Search recipes or ingredients…" value="${esc(homeSearchQuery)}" />`;
   if(q){
+    // Search is always global — it overrides tab filtering entirely.
     const matches=recipes.filter(r=>matchesQuery(r,q));
     html+=`<div class="cat">${matches.length} result${matches.length===1?"":"s"}</div>`;
     if(matches.length){
@@ -66,23 +102,32 @@ function renderHome(){
       html+=`<div class="small" style="margin:4px">No recipes match “${esc(homeSearchQuery)}”.</div>`;
     }
   }else{
-    for(const sec of SECTION_ORDER){
+    // Favorites, scoped to the active tab if one is selected.
+    const favScope=activeTab?recipes.filter(r=>sectionForCategory(r.category)===TAB_SECTION[activeTab]):recipes;
+    const favs=favScope.filter(r=>isFav(r.id));
+    const sections=activeTab?[TAB_SECTION[activeTab]]:SECTION_ORDER;
+    if(favs.length){
+      html+=`<div class="fav-head"><span class="fav-star">★</span>Favorites${activeTab?" · "+esc(TAB_SECTION[activeTab]):""}</div><div class="grid">`;
+      for(const r of favs)html+=recipeCardHtml(r);
+      html+=`</div>`;
+    }else{
+      html+=`<div class="empty-favs"><div class="ef-star">☆</div><div class="ef-msg">Star recipes to see them here</div><div class="small">Tap the ☆ on any recipe to add it to your favorites.</div></div>`;
+    }
+    // When a tab is active, or there are no favorites yet, expand the library so the app never looks empty.
+    // Otherwise the sections sit collapsed below the favorites (an explicit toggle always overrides this).
+    const defOpen=(activeTab!=null)||favs.length===0;
+    for(const sec of sections){
       const cats=[...new Set(recipes.filter(r=>sectionForCategory(r.category)===sec).map(r=>r.category))];
       if(!cats.length)continue;
-      const open=isSectionOpen(sec);
-      html+=`<div class="section-head" data-section="${esc(sec)}"><span class="schev">${open?"▾":"▸"}</span>${esc(sec)}</div>`;
-      if(open){
-        for(const c of cats){
-          html+=`<div class="cat">${esc(c)}</div><div class="grid">`;
-          for(const r of recipes.filter(x=>x.category===c))html+=recipeCardHtml(r);
-          html+=`</div>`;
-        }
-      }
+      const open=isSectionOpenCtx(sec,defOpen);
+      html+=`<div class="section-head" data-section="${esc(sec)}" data-open="${open?1:0}"><span class="schev">${open?"▾":"▸"}</span>${esc(sec)}</div>`;
+      if(open)html+=categoryGridHtml(recipes,sec);
     }
   }
   appEl.innerHTML=html;
   appEl.querySelectorAll(".rcard").forEach(el=>el.onclick=()=>go("detail",{recipe:findRecipe(el.dataset.id)}));
-  appEl.querySelectorAll(".section-head").forEach(el=>el.onclick=()=>{const name=el.dataset.section;setSectionOpen(name,!isSectionOpen(name));renderHome()});
+  appEl.querySelectorAll(".star").forEach(el=>el.onclick=(e)=>{e.stopPropagation();const now=toggleFav(el.dataset.fav);toast(now?"Added to favorites":"Removed from favorites");renderHome()});
+  appEl.querySelectorAll(".section-head").forEach(el=>el.onclick=()=>{const name=el.dataset.section;setSectionOpen(name,el.dataset.open!=="1");renderHome()});
   const s=document.getElementById("search");
   s.oninput=()=>{homeSearchQuery=s.value;const pos=s.selectionStart;renderHome();const ns=document.getElementById("search");if(ns){ns.focus();ns.setSelectionRange(pos,pos)}};
   let fab=document.getElementById("fab");if(fab)fab.remove();
@@ -91,13 +136,16 @@ function renderHome(){
 function renderDetail(){
   removeFab();const r=current;
   const nT=(r.steps||[]).filter(s=>s.timer).length;
-  let html=`<div class="hero"><div class="emoji">${r.emoji||"🍞"}</div><h2>${esc(r.name)}</h2><div class="summary">${esc(r.summary||"")}</div><div class="chips"><span class="chip">⏱ ${esc(r.totalTime||"—")}</span><span class="chip">📋 ${(r.steps||[]).length} steps</span>${r.yield?`<span class="chip">🍽 ${esc(r.yield)}</span>`:""}${r.difficulty?`<span class="chip">📈 ${esc(r.difficulty)}</span>`:""}${nT?`<span class="chip">⏲ ${nT} timers</span>`:""}</div></div>
+  const dfav=isFav(r.id);
+  let html=`<div class="hero"><button class="star detail-star${dfav?" on":""}" id="detailStar" data-fav="${r.id}" aria-pressed="${dfav?"true":"false"}" aria-label="${dfav?"Remove from favorites":"Add to favorites"}">${dfav?"★":"☆"}</button><div class="emoji">${r.emoji||"🍞"}</div><h2>${esc(r.name)}</h2><div class="summary">${esc(r.summary||"")}</div><div class="chips"><span class="chip">⏱ ${esc(r.totalTime||"—")}</span><span class="chip">📋 ${(r.steps||[]).length} steps</span>${r.yield?`<span class="chip">🍽 ${esc(r.yield)}</span>`:""}${r.difficulty?`<span class="chip">📈 ${esc(r.difficulty)}</span>`:""}${nT?`<span class="chip">⏲ ${nT} timers</span>`:""}</div></div>
   <button class="btn primary" id="startBtn">▶ Start</button>
   <div class="btnrow"><button class="btn ghost" id="custBtn">✏️ Customize</button><button class="btn ghost" id="sendTabBtn">📱 Send to tablet</button><button class="btn ghost" id="shareBtn">⬆️ Export</button></div>
   <div class="section-title">Ingredients</div><div class="ingredients">${renderIngredientsList(r.ingredients)}</div>`;
   if(r.tips&&r.tips.length){html+=`<div class="section-title">Tips</div><div class="tips-box">`;r.tips.forEach(t=>html+=`<div class="t">${esc(t)}</div>`);html+=`</div>`}
   if(getCustom().some(x=>x.id===r.id))html+=`<button class="btn ghost" id="delBtn" style="margin-top:14px;color:#c0392b">🗑 Delete this recipe</button>`;
   appEl.innerHTML=html;
+  const dstar=document.getElementById("detailStar");
+  if(dstar)dstar.onclick=(e)=>{e.stopPropagation();const now=toggleFav(r.id);dstar.textContent=now?"★":"☆";dstar.classList.toggle("on",now);dstar.setAttribute("aria-pressed",now?"true":"false");dstar.setAttribute("aria-label",now?"Remove from favorites":"Add to favorites");toast(now?"Added to favorites":"Removed from favorites")};
   document.getElementById("startBtn").onclick=()=>startRun(r);
   document.getElementById("custBtn").onclick=()=>go("edit");
   document.getElementById("sendTabBtn").onclick=async()=>{
