@@ -1,28 +1,31 @@
-// TEMPORARY diagnostic endpoint — remove after send-to-tablet is working.
+// TEMPORARY diagnostic endpoint — remove after send-to-tablet is stable.
+// GET  /api/diag            -> list cloud entries (id, name, type, parent)
+// GET  /api/diag?delete=ID  -> delete the entry with that id (sync repair)
 export default async function handler(req, res) {
-  const out = {
-    node: process.version,
-    cwd: process.cwd(),
-    toHexNative: typeof Uint8Array.prototype.toHex,
-    hasToken: Boolean(process.env.REMARKABLE_DEVICE_TOKEN),
-  };
-  try { await import("pdf-lib"); out.pdfLib = "ok"; }
-  catch (e) { out.pdfLib = String(e); }
-  try { await import("rmapi-js"); out.rmapiJs = "ok"; }
-  catch (e) { out.rmapiJs = String(e); }
-  try { await import("crc-32/crc32c.js"); out.crc32c = "ok"; }
-  catch (e) { out.crc32c = String(e); }
+  const token = process.env.REMARKABLE_DEVICE_TOKEN;
+  if (!token) return res.status(501).json({ error: "no token" });
   try {
-    const fs = await import("node:fs");
-    const dir = process.cwd() + "/node_modules/rmapi-js/dist";
-    out.rmapiDist = fs.readdirSync(dir).join(",");
-    const raw = fs.readFileSync(dir + "/raw.js", "utf8");
-    out.rawJsPatched = raw.includes("crc-32/crc32c.js");
-    out.rawJsImportLine = (raw.match(/from\s+"[^"]*crc[^"]*"/g) || []).join(" | ");
-  } catch (e) { out.fsProbe = String(e); }
-  try {
-    const mod = await import("../api/send-to-tablet.js");
-    out.sendToTabletModule = typeof mod.default === "function" ? "loads ok" : "loaded, no default";
-  } catch (e) { out.sendToTabletModule = String(e && e.stack || e); }
-  res.status(200).json(out);
+    const { remarkable } = await import("rmapi-js");
+    const api = await remarkable(token);
+    const entries = await api.listItems(true);
+    const list = entries.map((e) => ({
+      id: e.id,
+      hash: e.hash,
+      name: e.visibleName,
+      type: e.type,
+      fileType: e.fileType,
+      parent: e.parent ?? "",
+      lastModified: e.lastModified,
+    }));
+    const del = req.query && req.query.delete;
+    if (del) {
+      const target = entries.find((e) => e.id === del);
+      if (!target) return res.status(404).json({ error: "id not found", list });
+      await api.delete(target.hash);
+      return res.status(200).json({ deleted: { id: target.id, name: target.visibleName }, remaining: list.length - 1 });
+    }
+    return res.status(200).json({ count: list.length, list });
+  } catch (e) {
+    return res.status(502).json({ error: String(e && e.message || e), stack: String(e && e.stack || "").slice(0, 500) });
+  }
 }
