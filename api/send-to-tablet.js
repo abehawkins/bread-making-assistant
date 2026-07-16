@@ -5,6 +5,7 @@
 // reMarkable cloud via rmapi-js, into the "Recipes" folder (created if missing).
 // Requires REMARKABLE_DEVICE_TOKEN env var (one-time pairing done 2026-07-16).
 
+import "../scripts/uint8-polyfill.js"; // must precede rmapi-js (Uint8Array.toHex on Node < 24)
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
 import { remarkable, GenerationError } from "rmapi-js";
 
@@ -299,6 +300,4 @@ export default async function handler(req, res) {
     });
   } catch (e) {
     console.error("send-to-tablet failed:", e);
-    return res.status(502).json({ error: "Upload to reMarkable cloud failed", detail: String(e && e.message || e) });
-  }
-}
+    return res.status(502).j
